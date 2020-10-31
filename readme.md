@@ -1,4 +1,4 @@
-# React Form Pro (7kb gzip)
+# React Form Pro (XXXkb gzip)
 
 [![Build Status](https://travis-ci.org/webbestmaster/react-form-pro.svg?branch=master)](https://travis-ci.org/github/webbestmaster/react-form-pro)
 [![GitHub license](https://img.shields.io/npm/l/react-form-pro)](https://github.com/webbestmaster/react-form-pro/blob/master/license)
