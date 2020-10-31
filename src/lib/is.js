@@ -73,3 +73,12 @@ export function isFile(value: mixed): boolean %checks {
 export function isNotFile(value: mixed): boolean %checks {
     return !(value instanceof File);
 }
+
+export function hasProperty(object: mixed, propertyName: string): boolean %checks {
+    // $FlowFixMe
+    return Boolean(object) && Reflect.apply(Object.prototype.hasOwnProperty, object, [propertyName]);
+}
+
+export function hasNotProperty(object: mixed, propertyName: string): boolean %checks {
+    return !hasProperty(object, propertyName);
+}

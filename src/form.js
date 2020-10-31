@@ -1,3 +1,3 @@
 // @flow
 
-export {Form} from './form/c-form';
+export {FormGenerator} from './form/form-generator/form-generator';
