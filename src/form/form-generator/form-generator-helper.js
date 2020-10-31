@@ -2,7 +2,13 @@
 
 import {hasProperty} from '../../lib/is';
 
-import type {FieldDataType, FormGeneratorImportedFieldDataType} from './form-generator-type';
+import type {
+    FieldDataType,
+    FieldSetDataType,
+    FormGeneratorFormDataType,
+    FormGeneratorImportedFieldDataType,
+    FormGeneratorPropsType,
+} from './form-generator-type';
 
 export function extendFieldList(
     fieldList: Array<FieldDataType>,
@@ -18,4 +24,22 @@ export function extendFieldList(
 
         return {...fieldItem, ...importedItem};
     });
+}
+
+export function getDefaultFormData(arrivedProps: FormGeneratorPropsType): FormGeneratorFormDataType {
+    const {config} = arrivedProps;
+    const {fieldSetList} = config;
+    const defaultFormData = {};
+
+    fieldSetList.forEach((fieldSetData: FieldSetDataType) => {
+        const {fieldList} = fieldSetData;
+
+        fieldList.forEach((fieldData: FieldDataType) => {
+            const {name, defaultValue} = fieldData;
+
+            defaultFormData[name] = defaultValue;
+        });
+    });
+
+    return defaultFormData;
 }

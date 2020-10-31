@@ -24,6 +24,8 @@ export type FormGeneratorFormDataType = {
         | Array<File>,
 };
 
+export type FormValidationType = {+[key: string]: Array<Error>};
+
 export type InputComponentOnChangeType = (value: FromGeneratorInputValueType) => mixed;
 
 export type ValidateType = (
@@ -93,3 +95,10 @@ export type FormGeneratorConfigType = {|
 |};
 
 export type FormGeneratorImportedFieldDataType = {[key: string]: $Shape<FieldDataType>};
+
+export type FormGeneratorPropsType = {|
+    +config: FormGeneratorConfigType,
+    +onSubmit: (formData: FormGeneratorFormDataType) => mixed,
+    +onError: (errorList: Array<Error>, formData: FormGeneratorFormDataType) => mixed,
+    +footer: Node,
+|};
