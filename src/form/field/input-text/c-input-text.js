@@ -11,7 +11,7 @@ import {cleanText} from '../../../lib/string';
 type PropsType = InputComponentPropsType;
 
 export function InputText(props: PropsType): Node {
-    const {name, onChange, onBlur, errorList, defaultValue, placeholder, labelText} = props;
+    const {name, onChange, onBlur, errorList, defaultValue, placeholder, label} = props;
 
     function handleOnChange(evt: SyntheticEvent<HTMLInputElement>) {
         const {currentTarget} = evt;
@@ -41,7 +41,7 @@ export function InputText(props: PropsType): Node {
 
     return (
         <label className={fieldStyle.form__label_wrapper}>
-            <span className={fieldStyle.form__label_description}>{labelText}</span>
+            <span className={fieldStyle.form__label_description}>{label}</span>
             <input
                 className={classNames(fieldStyle.form__input, {
                     [fieldStyle.form__input__invalid]: errorList.length > 0,

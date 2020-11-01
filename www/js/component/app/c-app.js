@@ -21,9 +21,10 @@ import type {
 
 import {InputPassword} from '../../../../src/form/field/input-password/c-input-text';
 import {InputText} from '../../../../src/form/field/input-text/c-input-text';
-import {FieldSet} from '../../../../src/form/field/field-set/field-set';
 
 import {formButtonTypeName} from '../../../../src/form/form-const';
+
+import {InputCheckbox} from '../../../../src/form/field/input-checkbox/c-input-checkbox';
 
 import appExampleMd from './app-example.md';
 
@@ -57,7 +58,7 @@ const fieldSetList: Array<FormFieldSetType> = [
                 validate: getIsRequired,
                 defaultValue: '',
                 placeholder: 'Your nick name...',
-                labelText: 'Login',
+                label: 'Login',
                 isHidden: false,
             },
             {
@@ -66,7 +67,16 @@ const fieldSetList: Array<FormFieldSetType> = [
                 validate: getIsRequired,
                 defaultValue: '',
                 placeholder: 'Your password...',
-                labelText: 'Password',
+                label: 'Password',
+                isHidden: false,
+            },
+            {
+                name: 'check me',
+                fieldComponent: InputCheckbox,
+                validate: getIsRequired,
+                defaultValue: true,
+                placeholder: null,
+                label: 'use checkbox',
                 isHidden: false,
             },
         ],

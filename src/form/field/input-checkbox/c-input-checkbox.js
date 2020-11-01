@@ -12,7 +12,7 @@ import inputCheckboxStyle from './input-checkbox.scss';
 type PropsType = InputComponentPropsType;
 
 export function InputCheckbox(props: PropsType): Node {
-    const {name, onChange, onBlur, errorList, defaultValue, placeholder, labelText} = props;
+    const {name, onChange, onBlur, errorList, defaultValue, placeholder, label} = props;
 
     if (!isBoolean(defaultValue)) {
         console.error('InputCheckbox: Support Boolean Only');
@@ -52,7 +52,7 @@ export function InputCheckbox(props: PropsType): Node {
                     }
                 )}
             >
-                {labelText}
+                {label}
             </span>
             {/* <code>errorList: {errorList.map((error: Error): string => error.message)}</code>*/}
         </label>

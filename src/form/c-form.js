@@ -68,19 +68,7 @@ export function Form(props: PropsType): Node {
     }
 
     function renderFieldVisible(fieldData: FieldDataType): Node {
-        const {
-            name,
-            fieldComponent: FieldComponent,
-            defaultValue,
-            placeholder,
-            labelText,
-            content,
-            accept,
-            isMultiple,
-            filePathPrefix,
-            uploadFile,
-            getAutocompleteListData,
-        } = fieldData;
+        const {name, fieldComponent: FieldComponent, defaultValue, placeholder, label} = fieldData;
 
         const onChangeFieldHandler = createOnChangeFieldHandler(fieldData);
         const onBlurFieldHandler = createOnBlurFieldHandler(fieldData);
@@ -88,36 +76,27 @@ export function Form(props: PropsType): Node {
 
         return (
             <FieldComponent
-                accept={accept}
-                content={content}
                 defaultValue={defaultValue}
                 errorList={errorList}
-                filePathPrefix={filePathPrefix}
-                getAutocompleteListData={getAutocompleteListData}
-                isMultiple={isMultiple}
-                labelText={labelText}
+                key={name}
+                label={label}
                 name={name}
                 onBlur={onBlurFieldHandler}
                 onChange={onChangeFieldHandler}
                 placeholder={placeholder}
-                uploadFile={uploadFile}
             />
         );
     }
 
     function renderFieldSet(fieldSetData: FormFieldSetType): Node {
-        const {name, inputList /* fieldSetWrapper*/} = fieldSetData;
-        // const {component: FieldSetWrapper, legend} = fieldSetWrapper;
+        const {name, inputList} = fieldSetData;
 
-        return <fieldset>{inputList.map(renderInput)}</fieldset>;
-
-        /*
         return (
-            <FieldSetWrapper key={name} legend={legend}>
-                {inputList.map(renderField)}
-            </FieldSetWrapper>
+            <fieldset key={name}>
+                <legend> legend: make me alive </legend>
+                {inputList.map(renderInput)}
+            </fieldset>
         );
-        */
     }
 
     function renderFieldSetList(fieldSetListArgument: Array<FormFieldSetType>): Array<Node> {
@@ -166,15 +145,15 @@ export function Form(props: PropsType): Node {
         onError(errorList, formData);
     }
 
-    function renderButton(buttonData: FormButtonType): Node {
+    function renderButton(buttonData: FormButtonType, index: number): Node {
         const {isPrimary, onClick, title, type} = buttonData;
 
         return (
             // eslint-disable-next-line react/button-has-type
-            <button onClick={onClick} type={type}>
+            <button key={index} onClick={onClick} type={type}>
                 {title}
                 {' - '}
-                {isPrimary ? 'primary' : 'secondary'}
+                {isPrimary === true ? 'primary' : 'secondary'}
             </button>
         );
     }

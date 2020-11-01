@@ -5,24 +5,11 @@ import type {Node} from 'react';
 // import type {SnackbarContextType} from '../../provider/snackbar/snackbar-context-type';
 // import type {PopupContextType} from '../../provider/popup/popup-context-type';
 
-export type FromGeneratorPrimitiveInputValueType = string | number | boolean | null | File;
+export type FromPrimitiveInputValueType = string | number | boolean | null | File;
 
-export type FromGeneratorInputValueType =
-    | FromGeneratorPrimitiveInputValueType
-    | Array<string>
-    | Array<number>
-    | Array<boolean>
-    | Array<null>
-    | Array<File>;
+export type FromGeneratorInputValueType = FromPrimitiveInputValueType | Array<FromPrimitiveInputValueType>;
 
-export type FormDataType = {
-    [key: string]: | FromGeneratorPrimitiveInputValueType
-        | Array<string>
-        | Array<number>
-        | Array<boolean>
-        | Array<null>
-        | Array<File>,
-};
+export type FormDataType = {+[key: string]: FromGeneratorInputValueType};
 
 export type FormValidationType = {+[key: string]: Array<Error>};
 
@@ -42,16 +29,7 @@ export type InputComponentPropsType = {|
     +errorList: Array<Error>,
     +defaultValue: FromGeneratorInputValueType,
     +placeholder: Node,
-    // TODO: replace for labelText -> labelContent
-    +labelText: Node,
-    +content?: Node,
-    +accept?: string,
-    +isMultiple?: boolean,
-    +filePathPrefix?: string,
-    // +snackbarContext: SnackbarContextType,
-    // +popupContext: PopupContextType,
-    +uploadFile?: (file: File) => Promise<Error | string>,
-    +getAutocompleteListData?: () => Promise<Array<FieldAutocompleteDataType> | Error>,
+    +label: Node,
 |};
 
 export type FieldDataType = {|
@@ -61,14 +39,8 @@ export type FieldDataType = {|
     +validate: ValidateType,
     +defaultValue: FromGeneratorInputValueType,
     +placeholder: Node,
-    +labelText: Node,
-    +content?: Node,
+    +label: Node,
     +isHidden?: boolean,
-    +accept?: string,
-    +isMultiple?: boolean,
-    +filePathPrefix?: string,
-    +uploadFile?: (file: File) => Promise<Error | string>,
-    +getAutocompleteListData?: () => Promise<Array<FieldAutocompleteDataType> | Error>,
 |};
 
 export type FieldSetWrapperDataType = {
@@ -94,9 +66,9 @@ export type FormGeneratorImportedFieldDataType = {[key: string]: $Shape<FieldDat
 export type FormButtonTypeNameType = 'button' | 'submit' | 'reset';
 
 export type FormButtonType = {|
-    +title: string,
+    +title: Node,
     +type: FormButtonTypeNameType,
-    +isPrimary: boolean,
+    +isPrimary?: boolean,
     +onClick?: () => void,
 |};
 
