@@ -50,17 +50,19 @@ function handleError(errorList: Array<Error>, formData: FormDataType) {
 
 const fieldSetList: Array<FormFieldSetType> = [
     {
-        name: 'login / password',
+        name: 'login / password2',
         inputList: [
             {
-                name: 'login',
+                name: 'login1',
                 inputComponent: InputText,
                 validate: getIsRequired,
                 defaultValue: '',
                 placeholder: 'Your nick name...',
-                label: 'Login',
+                label: 'Login2',
                 isHidden: false,
             },
+
+            /*
             {
                 name: 'password',
                 inputComponent: InputPassword,
@@ -70,6 +72,7 @@ const fieldSetList: Array<FormFieldSetType> = [
                 label: 'Password',
                 isHidden: false,
             },
+*/
             {
                 name: 'check me',
                 inputComponent: InputCheckbox,
