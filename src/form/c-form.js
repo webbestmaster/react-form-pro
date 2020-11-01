@@ -11,15 +11,15 @@ import type {
     FormButtonType,
     FormFieldSetType,
     FormDataType,
-    FormGeneratorPropsType,
+    FormPropsType,
     FormValidationType,
-    FromGeneratorInputValueType,
+    FromInputValueType,
     InputComponentOnChangeType,
 } from './form-type';
 
 import {getDefaultFormData} from './form-helper';
 
-type PropsType = FormGeneratorPropsType;
+type PropsType = FormPropsType;
 
 export function Form(props: PropsType): Node {
     const {fieldSetList, onError, onSubmit, buttonList} = props;
@@ -28,7 +28,7 @@ export function Form(props: PropsType): Node {
     const [formValidation, setFormValidation] = useState<FormValidationType>({});
 
     function createOnChangeFieldHandler(fieldData: FieldDataType): InputComponentOnChangeType {
-        return (value: FromGeneratorInputValueType) => {
+        return (value: FromInputValueType) => {
             const {name, validate} = fieldData;
             const newFormData = {...formData, [name]: value};
             const fieldErrorList = validate(name, value, newFormData);
@@ -42,7 +42,7 @@ export function Form(props: PropsType): Node {
     }
 
     function createOnBlurFieldHandler(fieldData: FieldDataType): InputComponentOnChangeType {
-        return (value: FromGeneratorInputValueType) => {
+        return (value: FromInputValueType) => {
             const {name, validate} = fieldData;
             const newFormData = {...formData, [name]: value};
             const fieldErrorList = validate(name, value, newFormData);

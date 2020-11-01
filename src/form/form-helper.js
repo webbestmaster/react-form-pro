@@ -7,7 +7,7 @@ import type {
     FormFieldSetType,
     FormDataType,
     FormGeneratorImportedFieldDataType,
-    FormGeneratorPropsType,
+    FormPropsType,
 } from './form-type';
 
 export function extendFieldList(
@@ -26,7 +26,7 @@ export function extendFieldList(
     });
 }
 
-export function getDefaultFormData(arrivedProps: FormGeneratorPropsType): FormDataType {
+export function getDefaultFormData(arrivedProps: FormPropsType): FormDataType {
     const {fieldSetList} = arrivedProps;
     const defaultFormData = {};
 

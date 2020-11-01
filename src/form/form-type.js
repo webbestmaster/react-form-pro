@@ -7,15 +7,15 @@ import type {Node} from 'react';
 
 export type FromPrimitiveInputValueType = string | number | boolean | null | File;
 
-export type FromGeneratorInputValueType = FromPrimitiveInputValueType | Array<FromPrimitiveInputValueType>;
+export type FromInputValueType = FromPrimitiveInputValueType | Array<FromPrimitiveInputValueType>;
 
-export type FormDataType = {+[key: string]: FromGeneratorInputValueType};
+export type FormDataType = {+[key: string]: FromInputValueType};
 
 export type FormValidationType = {+[key: string]: Array<Error>};
 
-export type InputComponentOnChangeType = (value: FromGeneratorInputValueType) => mixed;
+export type InputComponentOnChangeType = (value: FromInputValueType) => mixed;
 
-export type ValidateType = (name: string, value: FromGeneratorInputValueType, formData: FormDataType) => Array<Error>;
+export type ValidateType = (name: string, value: FromInputValueType, formData: FormDataType) => Array<Error>;
 
 export type FieldAutocompleteDataType = {|
     +header: string,
@@ -27,7 +27,7 @@ export type InputComponentPropsType = {|
     +onChange: InputComponentOnChangeType,
     +onBlur: InputComponentOnChangeType,
     +errorList: Array<Error>,
-    +defaultValue: FromGeneratorInputValueType,
+    +defaultValue: FromInputValueType,
     +placeholder: Node,
     +label: Node,
 |};
@@ -37,7 +37,7 @@ export type FieldDataType = {|
     // eslint-disable-next-line id-match
     +inputComponent: React$ComponentType<InputComponentPropsType>,
     +validate: ValidateType,
-    +defaultValue: FromGeneratorInputValueType,
+    +defaultValue: FromInputValueType,
     +placeholder: Node,
     +label: Node,
     +isHidden?: boolean,
@@ -72,7 +72,7 @@ export type FormButtonType = {|
     +onClick?: () => void,
 |};
 
-export type FormGeneratorPropsType = {|
+export type FormPropsType = {|
     +fieldSetList: Array<FormFieldSetType>,
     +onSubmit: (formData: FormDataType) => mixed,
     +onError: (errorList: Array<Error>, formData: FormDataType) => mixed,
