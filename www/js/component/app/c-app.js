@@ -113,7 +113,13 @@ const buttonList: Array<FormButtonType> = [
 export function App(): Node {
     return (
         <div className="example-wrapper">
-            <Form buttonList={buttonList} fieldSetList={fieldSetList} onError={handleError} onSubmit={handleSubmit}/>
+            <Form
+                buttonList={buttonList}
+                fieldSetList={fieldSetList}
+                onError={handleError}
+                onSubmit={handleSubmit}
+                title="My form"
+            />
         </div>
     );
 }

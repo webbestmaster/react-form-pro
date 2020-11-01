@@ -73,6 +73,7 @@ export type FormButtonType = {|
 |};
 
 export type FormPropsType = {|
+    +title: string,
     +fieldSetList: Array<FormFieldSetType>,
     +onSubmit: (formData: FormDataType) => mixed,
     +onError: (errorList: Array<Error>, formData: FormDataType) => mixed,
