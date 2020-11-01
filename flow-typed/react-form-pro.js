@@ -59,7 +59,8 @@ declare module 'react-form-pro' {
     |};
 
     declare export type FormPropsType = {|
-        +title: string,
+        // eslint-disable-next-line id-match
+        +title: React$Node,
         +fieldSetList: Array<FormFieldSetType>,
         +onSubmit: (formData: FormDataType) => mixed,
         +onError: (errorList: Array<Error>, formData: FormDataType) => mixed,

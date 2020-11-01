@@ -50,7 +50,7 @@ export type FormButtonType = {|
 |};
 
 export type FormPropsType = {|
-    +title: string,
+    +title: Node,
     +fieldSetList: Array<FormFieldSetType>,
     +onSubmit: (formData: FormDataType) => mixed,
     +onError: (errorList: Array<Error>, formData: FormDataType) => mixed,
