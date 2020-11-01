@@ -12,7 +12,7 @@ export type FormValidationType = {+[key: string]: Array<Error>};
 
 export type InputComponentOnChangeType = (value: FromInputValueType) => void;
 
-export type ValidateType = (name: string, value: FromInputValueType, formData: FormDataType) => Array<Error>;
+export type FormValidateType = (name: string, value: FromInputValueType, formData: FormDataType) => Array<Error>;
 
 export type InputComponentPropsType = {|
     +name: string,
@@ -28,7 +28,7 @@ export type FieldDataType = {|
     +name: string,
     // eslint-disable-next-line id-match
     +inputComponent: React$ComponentType<InputComponentPropsType>,
-    +validate: ValidateType,
+    +validate: FormValidateType,
     +defaultValue: FromInputValueType,
     +placeholder: Node,
     +label: Node,
