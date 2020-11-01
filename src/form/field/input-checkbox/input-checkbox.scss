@@ -12,6 +12,7 @@
     height: $form-input-height - 6;
     margin-right: 12px;
     width: $form-input-height - 6;
+    text-align: center;
 }
 
 .input_checkbox__input_state__invalid {
@@ -26,7 +27,15 @@
     width: 0;
 
     &:checked + .input_checkbox__input_state {
-        background-image: url('i/checkbox-checked.svg');
+        &:before {
+            display: block;
+            padding-top: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            line-height: 24px;
+            content: '✔';
+            color: #0c0;
+        }
     }
 }
 
