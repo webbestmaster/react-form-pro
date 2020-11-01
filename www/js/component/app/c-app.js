@@ -12,12 +12,7 @@ import {getIsRequired} from '../../../../src/form/validate/validate';
 
 import {Markdown} from '../layout/c-markdown';
 
-import type {
-    FormDataType,
-    FieldSetWrapperDataType,
-    FormFieldSetType,
-    FormButtonType,
-} from '../../../../src/form/form-type';
+import type {FormDataType, FormFieldSetType, FormButtonType} from '../../../../src/form/form-type';
 
 import {InputPassword} from '../../../../src/form/field/input-password/c-input-text';
 import {InputText} from '../../../../src/form/field/input-text/c-input-text';
@@ -27,18 +22,6 @@ import {formButtonTypeName} from '../../../../src/form/form-const';
 import {InputCheckbox} from '../../../../src/form/field/input-checkbox/c-input-checkbox';
 
 import appExampleMd from './app-example.md';
-
-function FieldSetWrapper(props: FieldSetWrapperDataType): Node {
-    const {children, legend} = props;
-
-    return (
-        <div>
-            <h4>{legend}</h4>
-            <hr/>
-            {children}
-        </div>
-    );
-}
 
 function handleSubmit(formData: FormDataType) {
     console.log('handleSubmit', formData);
@@ -50,7 +33,7 @@ function handleError(errorList: Array<Error>, formData: FormDataType) {
 
 const fieldSetList: Array<FormFieldSetType> = [
     {
-        name: 'login / password2',
+        legend: 'login / password2',
         inputList: [
             {
                 name: 'login1',
@@ -92,7 +75,7 @@ const fieldSetList: Array<FormFieldSetType> = [
 */
     },
     {
-        name: 'test-form',
+        legend: 'test-form',
         inputList: [],
 
         /*

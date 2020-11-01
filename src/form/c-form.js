@@ -4,6 +4,8 @@ import React, {type Node, useState} from 'react';
 
 import {hasProperty} from '../lib/is';
 
+import {IsRender} from '../layout/is-render/c-is-render';
+
 import fieldStyle from './field/field.scss';
 
 import type {
@@ -90,12 +92,16 @@ export function Form(props: PropsType): Node {
         );
     }
 
-    function renderFieldSet(fieldSetData: FormFieldSetType): Node {
-        const {name, inputList} = fieldSetData;
+    function renderFieldSet(fieldSetData: FormFieldSetType, index: number): Node {
+        const {legend, inputList} = fieldSetData;
+        const hasLegend = Boolean(legend);
 
         return (
-            <fieldset key={name}>
-                <legend> legend: make me alive </legend>
+            <fieldset key={index}>
+                <IsRender isRender={hasLegend}>
+                    <legend>{legend}</legend>
+                </IsRender>
+
                 {inputList.map(renderInput)}
             </fieldset>
         );

@@ -43,22 +43,9 @@ export type FieldDataType = {|
     +isHidden?: boolean,
 |};
 
-export type FieldSetWrapperDataType = {
-    +children: Node,
-    +legend: Node,
-};
-
 export type FormFieldSetType = {|
-    +name: string,
+    +legend?: Node,
     +inputList: Array<FieldDataType>,
-
-    /*
-    +fieldSetWrapper: {|
-        // eslint-disable-next-line id-match
-        +component: React$ComponentType<FieldSetWrapperDataType>,
-        +legend: Node,
-    |},
-*/
 |};
 
 export type FormImportedFieldDataType = {[key: string]: $Shape<FieldDataType>};
