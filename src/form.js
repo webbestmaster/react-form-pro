@@ -2,6 +2,8 @@
 
 export {Form} from './form/c-form';
 
+export {formButtonTypeName} from './form/form-const';
+
 export type {
     FormButtonType,
     FormFieldSetType,

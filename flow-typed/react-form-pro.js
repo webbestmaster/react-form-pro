@@ -68,6 +68,8 @@ declare module 'react-form-pro' {
 
     // eslint-disable-next-line id-match
     declare export var Form: React$ComponentType<FormPropsType>;
+
+    declare export var formButtonTypeName: {+[key: FormButtonTypeNameType]: FormButtonTypeNameType};
 }
 
 declare module 'react-form-pro/dist/style.css' {
