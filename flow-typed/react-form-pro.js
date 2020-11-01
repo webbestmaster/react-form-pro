@@ -71,6 +71,13 @@ declare module 'react-form-pro' {
     declare export var Form: React$ComponentType<FormPropsType>;
 
     declare export var formButtonTypeName: {+[key: FormButtonTypeNameType]: FormButtonTypeNameType};
+
+    declare export function noValidate(name: string, value: FromInputValueType, formData: FormDataType): Array<Error>;
+    declare export function validateRequired(
+        name: string,
+        value: FromInputValueType,
+        formData: FormDataType,
+    ): Array<Error>;
 }
 
 declare module 'react-form-pro/dist/style.css' {

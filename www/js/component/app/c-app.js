@@ -7,7 +7,7 @@
 import React, {type Node} from 'react';
 
 import {Form} from '../../../../src/form';
-import {getIsRequired} from '../../../../src/form/validate/validate';
+import {validateRequired} from '../../../../src/form/validate/validate';
 import type {FormButtonType, FormDataType, FormFieldSetType} from '../../../../src/form/form-type';
 import {InputText} from '../../../../src/form/field/input-text/c-input-text';
 import {formButtonTypeName} from '../../../../src/form/form-const';
@@ -28,7 +28,7 @@ const fieldSetList: Array<FormFieldSetType> = [
             {
                 name: 'login1',
                 inputComponent: InputText,
-                validate: getIsRequired,
+                validate: validateRequired,
                 defaultValue: '',
                 placeholder: 'Your nick name...',
                 label: 'Login2',
@@ -39,7 +39,7 @@ const fieldSetList: Array<FormFieldSetType> = [
             {
                 name: 'password',
                 inputComponent: InputPassword,
-                validate: getIsRequired,
+                validate: validateRequired,
                 defaultValue: '',
                 placeholder: 'Your password...',
                 label: 'Password',
@@ -49,7 +49,7 @@ const fieldSetList: Array<FormFieldSetType> = [
             {
                 name: 'check me',
                 inputComponent: InputCheckbox,
-                validate: getIsRequired,
+                validate: validateRequired,
                 defaultValue: true,
                 placeholder: null,
                 label: 'use checkbox',
