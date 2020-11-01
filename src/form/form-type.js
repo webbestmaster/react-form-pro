@@ -78,12 +78,15 @@ export type FieldSetWrapperDataType = {
 
 export type FormFieldSetType = {|
     +name: string,
-    +fieldList: Array<FieldDataType>,
+    +inputList: Array<FieldDataType>,
+
+    /*
     +fieldSetWrapper: {|
         // eslint-disable-next-line id-match
         +component: React$ComponentType<FieldSetWrapperDataType>,
         +legend: Node,
     |},
+*/
 |};
 
 export type FormGeneratorImportedFieldDataType = {[key: string]: $Shape<FieldDataType>};

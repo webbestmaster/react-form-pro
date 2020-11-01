@@ -11,10 +11,10 @@ import type {
 } from './form-type';
 
 export function extendFieldList(
-    fieldList: Array<FieldDataType>,
+    inputList: Array<FieldDataType>,
     importedFieldData: FormGeneratorImportedFieldDataType
 ): Array<FieldDataType> {
-    return fieldList.map((fieldItem: FieldDataType): FieldDataType => {
+    return inputList.map((fieldItem: FieldDataType): FieldDataType => {
         const {name} = fieldItem;
         const importedItem = hasProperty(importedFieldData, name) ? importedFieldData[name] : null;
 
@@ -31,9 +31,9 @@ export function getDefaultFormData(arrivedProps: FormGeneratorPropsType): FormDa
     const defaultFormData = {};
 
     fieldSetList.forEach((fieldSetData: FormFieldSetType) => {
-        const {fieldList} = fieldSetData;
+        const {inputList} = fieldSetData;
 
-        fieldList.forEach((fieldData: FieldDataType) => {
+        inputList.forEach((fieldData: FieldDataType) => {
             const {name, defaultValue} = fieldData;
 
             defaultFormData[name] = defaultValue;

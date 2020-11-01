@@ -50,7 +50,7 @@ function handleError(errorList: Array<Error>, formData: FormDataType) {
 const fieldSetList: Array<FormFieldSetType> = [
     {
         name: 'login / password',
-        fieldList: [
+        inputList: [
             {
                 name: 'login',
                 fieldComponent: InputText,
@@ -70,18 +70,24 @@ const fieldSetList: Array<FormFieldSetType> = [
                 isHidden: false,
             },
         ],
+
+        /*
         fieldSetWrapper: {
             component: FieldSet,
             legend: null,
         },
+*/
     },
     {
         name: 'test-form',
-        fieldList: [],
+        inputList: [],
+
+        /*
         fieldSetWrapper: {
             component: FieldSetWrapper,
             legend: <h4>fieldSetWrapper - legend</h4>,
         },
+*/
     },
 ];
 

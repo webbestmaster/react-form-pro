@@ -53,7 +53,7 @@ export function Form(props: PropsType): Node {
         };
     }
 
-    function renderField(fieldData: FieldDataType): Node {
+    function renderInput(fieldData: FieldDataType): Node {
         const {isHidden} = fieldData;
 
         return isHidden === true ? renderFieldHidden(fieldData) : renderFieldVisible(fieldData);
@@ -106,18 +106,22 @@ export function Form(props: PropsType): Node {
     }
 
     function renderFieldSet(fieldSetData: FormFieldSetType): Node {
-        const {name, fieldList, fieldSetWrapper} = fieldSetData;
-        const {component: FieldSetWrapper, legend} = fieldSetWrapper;
+        const {name, inputList /* fieldSetWrapper*/} = fieldSetData;
+        // const {component: FieldSetWrapper, legend} = fieldSetWrapper;
 
+        return <fieldset>{inputList.map(renderInput)}</fieldset>;
+
+        /*
         return (
             <FieldSetWrapper key={name} legend={legend}>
-                {fieldList.map(renderField)}
+                {inputList.map(renderField)}
             </FieldSetWrapper>
         );
+        */
     }
 
-    function renderFieldSetList(fieldSetDataList: Array<FormFieldSetType>): Array<Node> {
-        return fieldSetDataList.map(renderFieldSet);
+    function renderFieldSetList(fieldSetListArgument: Array<FormFieldSetType>): Array<Node> {
+        return fieldSetListArgument.map(renderFieldSet);
     }
 
     function validateFieldSetList(): Array<Error> {
@@ -126,9 +130,9 @@ export function Form(props: PropsType): Node {
         const errorList: Array<Error> = [];
 
         fieldSetList.forEach((fieldSetData: FormFieldSetType) => {
-            const {fieldList} = fieldSetData;
+            const {inputList} = fieldSetData;
 
-            fieldList.forEach((fieldData: FieldDataType) => {
+            inputList.forEach((fieldData: FieldDataType) => {
                 const {name, validate} = fieldData;
                 const fieldErrorList = validate(name, formData[name], formData);
 
