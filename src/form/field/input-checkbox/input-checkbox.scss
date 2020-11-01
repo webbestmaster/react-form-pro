@@ -9,13 +9,13 @@
     background-repeat: no-repeat;
     background-size: contain;
     float: left;
-    height: $form-generator-input-height - 6;
+    height: $form-input-height - 6;
     margin-right: 12px;
-    width: $form-generator-input-height - 6;
+    width: $form-input-height - 6;
 }
 
 .input_checkbox__input_state__invalid {
-    background-color: $form-generator-input-border-color-invalid;
+    background-color: $form-input-border-color-invalid;
 }
 
 .input_checkbox__input {

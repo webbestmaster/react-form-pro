@@ -165,7 +165,7 @@ export function Form(props: PropsType): Node {
     }
 
     return (
-        <form action="#" className={fieldStyle.form__generator} method="post" onSubmit={handleFormSubmit}>
+        <form action="#" className={fieldStyle.form} method="post" onSubmit={handleFormSubmit}>
             {renderFieldSetList(fieldSetList)}
             {renderButtonList(buttonList)}
         </form>
