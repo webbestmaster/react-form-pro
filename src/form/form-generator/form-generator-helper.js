@@ -4,7 +4,7 @@ import {hasProperty} from '../../lib/is';
 
 import type {
     FieldDataType,
-    FieldSetDataType,
+    FormFieldSetType,
     FormGeneratorFormDataType,
     FormGeneratorImportedFieldDataType,
     FormGeneratorPropsType,
@@ -27,11 +27,10 @@ export function extendFieldList(
 }
 
 export function getDefaultFormData(arrivedProps: FormGeneratorPropsType): FormGeneratorFormDataType {
-    const {config} = arrivedProps;
-    const {fieldSetList} = config;
+    const {fieldSetList} = arrivedProps;
     const defaultFormData = {};
 
-    fieldSetList.forEach((fieldSetData: FieldSetDataType) => {
+    fieldSetList.forEach((fieldSetData: FormFieldSetType) => {
         const {fieldList} = fieldSetData;
 
         fieldList.forEach((fieldData: FieldDataType) => {

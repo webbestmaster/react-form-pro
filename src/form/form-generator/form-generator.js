@@ -8,8 +8,8 @@ import fieldStyle from './field/field.scss';
 
 import type {
     FieldDataType,
-    FieldSetDataType,
-    FormGeneratorConfigType,
+    FormButtonType,
+    FormFieldSetType,
     FormGeneratorFormDataType,
     FormGeneratorPropsType,
     FormValidationType,
@@ -21,8 +21,7 @@ import {getDefaultFormData} from './form-generator-helper';
 type PropsType = FormGeneratorPropsType;
 
 export function FormGenerator(props: PropsType): Node {
-    const {config, footer, onError, onSubmit} = props;
-    const {fieldSetList} = config;
+    const {fieldSetList, onError, onSubmit, buttonList} = props;
 
     const [formData, setFomData] = useState<FormGeneratorFormDataType>(getDefaultFormData(props));
     const [formValidation, setFormValidation] = useState<FormValidationType>({});
@@ -105,7 +104,7 @@ export function FormGenerator(props: PropsType): Node {
         );
     }
 
-    function renderFieldSet(fieldSetData: FieldSetDataType): Node {
+    function renderFieldSet(fieldSetData: FormFieldSetType): Node {
         const {name, fieldList, fieldSetWrapper} = fieldSetData;
         const {component: FieldSetWrapper, legend} = fieldSetWrapper;
 
@@ -116,7 +115,7 @@ export function FormGenerator(props: PropsType): Node {
         );
     }
 
-    function renderFieldSetList(fieldSetDataList: Array<FieldSetDataType>): Array<Node> {
+    function renderFieldSetList(fieldSetDataList: Array<FormFieldSetType>): Array<Node> {
         return fieldSetDataList.map(renderFieldSet);
     }
 
@@ -125,7 +124,7 @@ export function FormGenerator(props: PropsType): Node {
 
         const errorList: Array<Error> = [];
 
-        fieldSetList.forEach((fieldSetData: FieldSetDataType) => {
+        fieldSetList.forEach((fieldSetData: FormFieldSetType) => {
             const {fieldList} = fieldSetData;
 
             fieldList.forEach((fieldData: FieldDataType) => {
@@ -162,10 +161,27 @@ export function FormGenerator(props: PropsType): Node {
         onError(errorList, formData);
     }
 
+    function renderButton(buttonData: FormButtonType): Node {
+        const {isPrimary, onClick, title, type} = buttonData;
+
+        return (
+            // eslint-disable-next-line react/button-has-type
+            <button onClick={onClick} type={type}>
+                {title}
+                {' - '}
+                {isPrimary ? 'primary' : 'secondary'}
+            </button>
+        );
+    }
+
+    function renderButtonList(buttonDataList: Array<FormButtonType>): Node {
+        return <div>{buttonDataList.map(renderButton)}</div>;
+    }
+
     return (
         <form action="#" className={fieldStyle.form__generator} method="post" onSubmit={handleFormSubmit}>
             {renderFieldSetList(fieldSetList)}
-            {footer}
+            {renderButtonList(buttonList)}
         </form>
     );
 }

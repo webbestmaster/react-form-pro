@@ -80,7 +80,7 @@ export type FieldSetWrapperDataType = {
     +legend: Node,
 };
 
-export type FieldSetDataType = {|
+export type FormFieldSetType = {|
     +name: string,
     +fieldList: Array<FieldDataType>,
     +fieldSetWrapper: {|
@@ -90,15 +90,20 @@ export type FieldSetDataType = {|
     |},
 |};
 
-export type FormGeneratorConfigType = {|
-    +fieldSetList: Array<FieldSetDataType>,
-|};
-
 export type FormGeneratorImportedFieldDataType = {[key: string]: $Shape<FieldDataType>};
 
+export type FormButtonTypeNameType = 'button' | 'submit' | 'reset';
+
+export type FormButtonType = {|
+    +title: string,
+    +type: FormButtonTypeNameType,
+    +isPrimary: boolean,
+    +onClick?: () => void,
+|};
+
 export type FormGeneratorPropsType = {|
-    +config: FormGeneratorConfigType,
+    +fieldSetList: Array<FormFieldSetType>,
     +onSubmit: (formData: FormGeneratorFormDataType) => mixed,
     +onError: (errorList: Array<Error>, formData: FormGeneratorFormDataType) => mixed,
-    +footer: Node,
+    +buttonList: Array<FormButtonType>,
 |};

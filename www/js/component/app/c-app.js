@@ -13,14 +13,17 @@ import {getIsRequired} from '../../../../src/form/form-generator/validate/valida
 import {Markdown} from '../layout/c-markdown';
 
 import type {
-    FormGeneratorConfigType,
     FormGeneratorFormDataType,
     FieldSetWrapperDataType,
+    FormFieldSetType,
+    FormButtonType,
 } from '../../../../src/form/form-generator/form-generator-type';
 
 import {InputPassword} from '../../../../src/form/form-generator/field/input-password/c-input-text';
 import {InputText} from '../../../../src/form/form-generator/field/input-text/c-input-text';
 import {FieldSet} from '../../../../src/form/form-generator/field/field-set/field-set';
+
+import {formButtonTypeName} from '../../../../src/form/form-generator/form-generator-const';
 
 import appExampleMd from './app-example.md';
 
@@ -44,57 +47,62 @@ function handleError(errorList: Array<Error>, formData: FormGeneratorFormDataTyp
     console.log('handleError', errorList, formData);
 }
 
-export function App(): Node {
-    // +config: FormGeneratorConfigType,
-    //     +onSubmit: (formData: FormGeneratorFormDataType) => mixed,
-    //     +onError: (errorList: Array<Error>, formData: FormGeneratorFormDataType) => mixed,
-    //     +footer: Node,
-
-    const config: FormGeneratorConfigType = {
-        fieldSetList: [
+const fieldSetList: Array<FormFieldSetType> = [
+    {
+        name: 'login / password',
+        fieldList: [
             {
-                name: 'login / password',
-                fieldList: [
-                    {
-                        name: 'login',
-                        fieldComponent: InputText,
-                        validate: getIsRequired,
-                        defaultValue: '',
-                        placeholder: 'Your nick name...',
-                        labelText: 'Login',
-                        isHidden: false,
-                    },
-                    {
-                        name: 'password',
-                        fieldComponent: InputPassword,
-                        validate: getIsRequired,
-                        defaultValue: '',
-                        placeholder: 'Your password...',
-                        labelText: 'Password',
-                        isHidden: false,
-                    },
-                ],
-                fieldSetWrapper: {
-                    component: FieldSet,
-                    legend: null,
-                },
+                name: 'login',
+                fieldComponent: InputText,
+                validate: getIsRequired,
+                defaultValue: '',
+                placeholder: 'Your nick name...',
+                labelText: 'Login',
+                isHidden: false,
             },
             {
-                name: 'test-form',
-                fieldList: [],
-                fieldSetWrapper: {
-                    component: FieldSetWrapper,
-                    legend: <h4>fieldSetWrapper - legend</h4>,
-                },
+                name: 'password',
+                fieldComponent: InputPassword,
+                validate: getIsRequired,
+                defaultValue: '',
+                placeholder: 'Your password...',
+                labelText: 'Password',
+                isHidden: false,
             },
         ],
-    };
+        fieldSetWrapper: {
+            component: FieldSet,
+            legend: null,
+        },
+    },
+    {
+        name: 'test-form',
+        fieldList: [],
+        fieldSetWrapper: {
+            component: FieldSetWrapper,
+            legend: <h4>fieldSetWrapper - legend</h4>,
+        },
+    },
+];
 
-    const footer: Node = <div>the footer</div>;
+const buttonList: Array<FormButtonType> = [
+    {
+        isPrimary: false,
+        onClick: console.log,
+        title: 'apply form',
+        type: formButtonTypeName.submit,
+    },
+];
 
+export function App(): Node {
     return (
         <div className="example-wrapper">
-            <FormGenerator config={config} footer={footer} onError={handleError} onSubmit={handleSubmit}/>
+            <FormGenerator
+                buttonList={buttonList}
+                fieldSetList={fieldSetList}
+                onError={handleError}
+                onSubmit={handleSubmit}
+            />
         </div>
     );
 }
