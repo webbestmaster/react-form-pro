@@ -15,7 +15,7 @@ export type FromGeneratorInputValueType =
     | Array<null>
     | Array<File>;
 
-export type FormGeneratorFormDataType = {
+export type FormDataType = {
     [key: string]: | FromGeneratorPrimitiveInputValueType
         | Array<string>
         | Array<number>
@@ -28,11 +28,7 @@ export type FormValidationType = {+[key: string]: Array<Error>};
 
 export type InputComponentOnChangeType = (value: FromGeneratorInputValueType) => mixed;
 
-export type ValidateType = (
-    name: string,
-    value: FromGeneratorInputValueType,
-    formData: FormGeneratorFormDataType,
-) => Array<Error>;
+export type ValidateType = (name: string, value: FromGeneratorInputValueType, formData: FormDataType) => Array<Error>;
 
 export type FieldAutocompleteDataType = {|
     +header: string,
@@ -103,7 +99,7 @@ export type FormButtonType = {|
 
 export type FormGeneratorPropsType = {|
     +fieldSetList: Array<FormFieldSetType>,
-    +onSubmit: (formData: FormGeneratorFormDataType) => mixed,
-    +onError: (errorList: Array<Error>, formData: FormGeneratorFormDataType) => mixed,
+    +onSubmit: (formData: FormDataType) => mixed,
+    +onError: (errorList: Array<Error>, formData: FormDataType) => mixed,
     +buttonList: Array<FormButtonType>,
 |};

@@ -3,21 +3,22 @@
 import React, {type Node} from 'react';
 import classNames from 'classnames';
 
-import type {InputComponentPropsType} from '../../form-generator-type';
+import type {InputComponentPropsType} from '../../form-type';
 import fieldStyle from '../field.scss';
-import {isString} from '../../../../lib/is';
-import {cleanText} from '../../../../lib/string';
+import {isString} from '../../../lib/is';
+
+import inputTextAreaStyle from './input-text-area.scss';
 
 type PropsType = InputComponentPropsType;
 
-export function InputText(props: PropsType): Node {
+export function InputTextArea(props: PropsType): Node {
     const {name, onChange, onBlur, errorList, defaultValue, placeholder, labelText} = props;
 
     function handleOnChange(evt: SyntheticEvent<HTMLInputElement>) {
         const {currentTarget} = evt;
         const {value} = currentTarget;
 
-        const trimmedValue = cleanText(value);
+        const trimmedValue = value.trim();
 
         onChange(trimmedValue);
     }
@@ -25,7 +26,7 @@ export function InputText(props: PropsType): Node {
     function handleOnBlur(evt: SyntheticEvent<HTMLInputElement>) {
         const {currentTarget} = evt;
         const {value} = currentTarget;
-        const trimmedValue = cleanText(value);
+        const trimmedValue = value.trim();
 
         if (trimmedValue !== value) {
             currentTarget.value = trimmedValue;
@@ -35,15 +36,15 @@ export function InputText(props: PropsType): Node {
     }
 
     if (!isString(defaultValue)) {
-        console.error('InputText: Support String Only.');
+        console.error('InputTextArea: Support String Only.');
         return null;
     }
 
     return (
-        <label className={fieldStyle.form__label_wrapper}>
+        <label className={inputTextAreaStyle.text_area__label_wrapper}>
             <span className={fieldStyle.form__label_description}>{labelText}</span>
-            <input
-                className={classNames(fieldStyle.form__input, {
+            <textarea
+                className={classNames(inputTextAreaStyle.text_area__input, {
                     [fieldStyle.form__input__invalid]: errorList.length > 0,
                 })}
                 defaultValue={defaultValue}
@@ -51,9 +52,7 @@ export function InputText(props: PropsType): Node {
                 onBlur={handleOnBlur}
                 onChange={handleOnChange}
                 placeholder={placeholder}
-                type="text"
             />
-            {/* <code>errorList: {errorList.map((error: Error): string => error.message)}</code>*/}
         </label>
     );
 }

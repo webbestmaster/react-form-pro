@@ -3,9 +3,9 @@
 import React, {type Node} from 'react';
 import classNames from 'classnames';
 
-import type {InputComponentPropsType} from '../../form-generator-type';
+import type {InputComponentPropsType} from '../../form-type';
 import fieldStyle from '../field.scss';
-import {isString} from '../../../../lib/is';
+import {isString} from '../../../lib/is';
 
 type PropsType = InputComponentPropsType;
 

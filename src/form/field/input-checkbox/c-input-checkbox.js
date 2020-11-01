@@ -3,9 +3,9 @@
 import React, {type Node} from 'react';
 import classNames from 'classnames';
 
-import type {InputComponentPropsType} from '../../form-generator-type';
+import type {InputComponentPropsType} from '../../form-type';
 import fieldStyle from '../field.scss';
-import {isBoolean} from '../../../../lib/is';
+import {isBoolean} from '../../../lib/is';
 
 import inputCheckboxStyle from './input-checkbox.scss';
 

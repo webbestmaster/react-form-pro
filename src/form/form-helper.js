@@ -1,14 +1,14 @@
 // @flow
 
-import {hasProperty} from '../../lib/is';
+import {hasProperty} from '../lib/is';
 
 import type {
     FieldDataType,
     FormFieldSetType,
-    FormGeneratorFormDataType,
+    FormDataType,
     FormGeneratorImportedFieldDataType,
     FormGeneratorPropsType,
-} from './form-generator-type';
+} from './form-type';
 
 export function extendFieldList(
     fieldList: Array<FieldDataType>,
@@ -26,7 +26,7 @@ export function extendFieldList(
     });
 }
 
-export function getDefaultFormData(arrivedProps: FormGeneratorPropsType): FormGeneratorFormDataType {
+export function getDefaultFormData(arrivedProps: FormGeneratorPropsType): FormDataType {
     const {fieldSetList} = arrivedProps;
     const defaultFormData = {};
 

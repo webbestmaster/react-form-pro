@@ -1,6 +1,6 @@
 // @flow
 
-import {type FormButtonTypeNameType} from './form-generator-type';
+import {type FormButtonTypeNameType} from './form-type';
 
 export const formButtonTypeName: {+[key: FormButtonTypeNameType]: FormButtonTypeNameType} = {
     button: 'button',

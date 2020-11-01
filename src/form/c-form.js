@@ -2,7 +2,7 @@
 
 import React, {type Node, useState} from 'react';
 
-import {hasProperty} from '../../lib/is';
+import {hasProperty} from '../lib/is';
 
 import fieldStyle from './field/field.scss';
 
@@ -10,20 +10,21 @@ import type {
     FieldDataType,
     FormButtonType,
     FormFieldSetType,
-    FormGeneratorFormDataType,
+    FormDataType,
     FormGeneratorPropsType,
     FormValidationType,
     FromGeneratorInputValueType,
     InputComponentOnChangeType,
-} from './form-generator-type';
-import {getDefaultFormData} from './form-generator-helper';
+} from './form-type';
+
+import {getDefaultFormData} from './form-helper';
 
 type PropsType = FormGeneratorPropsType;
 
-export function FormGenerator(props: PropsType): Node {
+export function Form(props: PropsType): Node {
     const {fieldSetList, onError, onSubmit, buttonList} = props;
 
-    const [formData, setFomData] = useState<FormGeneratorFormDataType>(getDefaultFormData(props));
+    const [formData, setFomData] = useState<FormDataType>(getDefaultFormData(props));
     const [formValidation, setFormValidation] = useState<FormValidationType>({});
 
     function createOnChangeFieldHandler(fieldData: FieldDataType): InputComponentOnChangeType {

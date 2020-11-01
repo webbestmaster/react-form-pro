@@ -2,26 +2,18 @@
 
 /* global document */
 
-import type {FormGeneratorFormDataType, FromGeneratorInputValueType} from '../form-generator-type';
-import {isBoolean, isFile, isNull, isNumber, isString} from '../../../lib/is';
-import {getSlug} from '../../../lib/string';
+import type {FormDataType, FromGeneratorInputValueType} from '../form-type';
+import {isBoolean, isFile, isNull, isNumber, isString} from '../../lib/is';
+import {getSlug} from '../../lib/string';
 
 const errorMessageFieldRequired = 'Required field!';
 
-export function noValidate(
-    name: string,
-    value: FromGeneratorInputValueType,
-    formData: FormGeneratorFormDataType
-): Array<Error> {
+export function noValidate(name: string, value: FromGeneratorInputValueType, formData: FormDataType): Array<Error> {
     return [];
 }
 
 // eslint-disable-next-line complexity
-export function getIsRequired(
-    name: string,
-    value: FromGeneratorInputValueType,
-    formData: FormGeneratorFormDataType
-): Array<Error> {
+export function getIsRequired(name: string, value: FromGeneratorInputValueType, formData: FormDataType): Array<Error> {
     const requiredErrorList = [new Error(errorMessageFieldRequired)];
 
     if (isString(value)) {
@@ -52,11 +44,7 @@ export function getIsRequired(
     throw new Error('Type has no validation! Add validation here!');
 }
 
-export function isValidHTml(
-    name: string,
-    html: FromGeneratorInputValueType,
-    formData: FormGeneratorFormDataType
-): Array<Error> {
+export function isValidHTml(name: string, html: FromGeneratorInputValueType, formData: FormDataType): Array<Error> {
     if (typeof document === 'undefined') {
         return [];
     }
@@ -76,11 +64,7 @@ export function isValidHTml(
     return [new Error('HTML is not valid')];
 }
 
-export function validateSlug(
-    name: string,
-    value: FromGeneratorInputValueType,
-    formData: FormGeneratorFormDataType
-): Array<Error> {
+export function validateSlug(name: string, value: FromGeneratorInputValueType, formData: FormDataType): Array<Error> {
     if (!value) {
         return [new Error(errorMessageFieldRequired)];
     }
