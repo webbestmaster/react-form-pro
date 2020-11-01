@@ -6,13 +6,13 @@ import type {
     FieldDataType,
     FormFieldSetType,
     FormDataType,
-    FormGeneratorImportedFieldDataType,
+    FormImportedFieldDataType,
     FormPropsType,
 } from './form-type';
 
 export function extendFieldList(
     inputList: Array<FieldDataType>,
-    importedFieldData: FormGeneratorImportedFieldDataType
+    importedFieldData: FormImportedFieldDataType
 ): Array<FieldDataType> {
     return inputList.map((fieldItem: FieldDataType): FieldDataType => {
         const {name} = fieldItem;

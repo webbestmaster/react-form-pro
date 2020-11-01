@@ -61,7 +61,7 @@ export type FormFieldSetType = {|
 */
 |};
 
-export type FormGeneratorImportedFieldDataType = {[key: string]: $Shape<FieldDataType>};
+export type FormImportedFieldDataType = {[key: string]: $Shape<FieldDataType>};
 
 export type FormButtonTypeNameType = 'button' | 'submit' | 'reset';
 
