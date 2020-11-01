@@ -2,9 +2,6 @@
 
 import type {Node} from 'react';
 
-// import type {SnackbarContextType} from '../../provider/snackbar/snackbar-context-type';
-// import type {PopupContextType} from '../../provider/popup/popup-context-type';
-
 export type FromPrimitiveInputValueType = string | number | boolean | null | File;
 
 export type FromInputValueType = FromPrimitiveInputValueType | Array<FromPrimitiveInputValueType>;
@@ -13,14 +10,9 @@ export type FormDataType = {+[key: string]: FromInputValueType};
 
 export type FormValidationType = {+[key: string]: Array<Error>};
 
-export type InputComponentOnChangeType = (value: FromInputValueType) => mixed;
+export type InputComponentOnChangeType = (value: FromInputValueType) => void;
 
 export type ValidateType = (name: string, value: FromInputValueType, formData: FormDataType) => Array<Error>;
-
-export type FieldAutocompleteDataType = {|
-    +header: string,
-    +value: string,
-|};
 
 export type InputComponentPropsType = {|
     +name: string,
@@ -47,8 +39,6 @@ export type FormFieldSetType = {|
     +legend?: Node,
     +inputList: Array<FieldDataType>,
 |};
-
-export type FormImportedFieldDataType = {[key: string]: $Shape<FieldDataType>};
 
 export type FormButtonTypeNameType = 'button' | 'submit' | 'reset';
 

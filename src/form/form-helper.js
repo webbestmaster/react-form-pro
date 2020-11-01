@@ -6,25 +6,9 @@ import type {
     FieldDataType,
     FormFieldSetType,
     FormDataType,
-    FormImportedFieldDataType,
+    // FormImportedFieldDataType,
     FormPropsType,
 } from './form-type';
-
-export function extendFieldList(
-    inputList: Array<FieldDataType>,
-    importedFieldData: FormImportedFieldDataType
-): Array<FieldDataType> {
-    return inputList.map((fieldItem: FieldDataType): FieldDataType => {
-        const {name} = fieldItem;
-        const importedItem = hasProperty(importedFieldData, name) ? importedFieldData[name] : null;
-
-        if (importedItem === null) {
-            return {...fieldItem};
-        }
-
-        return {...fieldItem, ...importedItem};
-    });
-}
 
 export function getDefaultFormData(arrivedProps: FormPropsType): FormDataType {
     const {fieldSetList} = arrivedProps;
