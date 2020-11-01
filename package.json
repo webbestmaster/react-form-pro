@@ -53,7 +53,6 @@
     "npm": ">=5.0.0"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
     "markdown-pro": "^1.0.10"
   },
   "peerDependencies": {

@@ -1,8 +1,8 @@
 // @flow
 
 import React, {type Node} from 'react';
-import classNames from 'classnames';
 
+import {classNames} from '../../../lib/css';
 import type {InputComponentPropsType} from '../../form-type';
 import fieldStyle from '../field.scss';
 import {isString} from '../../../lib/is';

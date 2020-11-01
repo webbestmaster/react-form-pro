@@ -11,8 +11,8 @@ import fieldStyle from './field/field.scss';
 import type {
     FieldDataType,
     FormButtonType,
-    FormFieldSetType,
     FormDataType,
+    FormFieldSetType,
     FormPropsType,
     FormValidationType,
     FromInputValueType,

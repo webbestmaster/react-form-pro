@@ -7,21 +7,11 @@
 import React, {type Node} from 'react';
 
 import {Form} from '../../../../src/form';
-
 import {getIsRequired} from '../../../../src/form/validate/validate';
-
-import {Markdown} from '../layout/c-markdown';
-
-import type {FormDataType, FormFieldSetType, FormButtonType} from '../../../../src/form/form-type';
-
-import {InputPassword} from '../../../../src/form/field/input-password/c-input-text';
+import type {FormButtonType, FormDataType, FormFieldSetType} from '../../../../src/form/form-type';
 import {InputText} from '../../../../src/form/field/input-text/c-input-text';
-
 import {formButtonTypeName} from '../../../../src/form/form-const';
-
 import {InputCheckbox} from '../../../../src/form/field/input-checkbox/c-input-checkbox';
-
-import appExampleMd from './app-example.md';
 
 function handleSubmit(formData: FormDataType) {
     console.log('handleSubmit', formData);

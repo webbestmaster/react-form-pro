@@ -1,14 +1,6 @@
 // @flow
 
-import {hasProperty} from '../lib/is';
-
-import type {
-    FieldDataType,
-    FormFieldSetType,
-    FormDataType,
-    // FormImportedFieldDataType,
-    FormPropsType,
-} from './form-type';
+import type {FieldDataType, FormDataType, FormFieldSetType, FormPropsType} from './form-type';
 
 export function getDefaultFormData(arrivedProps: FormPropsType): FormDataType {
     const {fieldSetList} = arrivedProps;
