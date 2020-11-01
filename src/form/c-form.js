@@ -60,22 +60,24 @@ export function Form(props: PropsType): Node {
     }
 
     function renderFieldHidden(fieldData: FieldDataType): Node {
+        const {name} = fieldData;
+
         return (
-            <div className={fieldStyle.form_input__hidden} key={fieldData.name}>
+            <div className={fieldStyle.form_input__hidden} key={name}>
                 {renderFieldVisible(fieldData)}
             </div>
         );
     }
 
     function renderFieldVisible(fieldData: FieldDataType): Node {
-        const {name, fieldComponent: FieldComponent, defaultValue, placeholder, label} = fieldData;
+        const {name, inputComponent: InputComponent, defaultValue, placeholder, label} = fieldData;
 
         const onChangeFieldHandler = createOnChangeFieldHandler(fieldData);
         const onBlurFieldHandler = createOnBlurFieldHandler(fieldData);
         const errorList = hasProperty(formValidation, name) ? formValidation[name] : [];
 
         return (
-            <FieldComponent
+            <InputComponent
                 defaultValue={defaultValue}
                 errorList={errorList}
                 key={name}

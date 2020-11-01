@@ -35,7 +35,7 @@ export type InputComponentPropsType = {|
 export type FieldDataType = {|
     +name: string,
     // eslint-disable-next-line id-match
-    +fieldComponent: React$ComponentType<InputComponentPropsType>,
+    +inputComponent: React$ComponentType<InputComponentPropsType>,
     +validate: ValidateType,
     +defaultValue: FromGeneratorInputValueType,
     +placeholder: Node,

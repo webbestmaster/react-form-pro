@@ -54,7 +54,7 @@ const fieldSetList: Array<FormFieldSetType> = [
         inputList: [
             {
                 name: 'login',
-                fieldComponent: InputText,
+                inputComponent: InputText,
                 validate: getIsRequired,
                 defaultValue: '',
                 placeholder: 'Your nick name...',
@@ -63,7 +63,7 @@ const fieldSetList: Array<FormFieldSetType> = [
             },
             {
                 name: 'password',
-                fieldComponent: InputPassword,
+                inputComponent: InputPassword,
                 validate: getIsRequired,
                 defaultValue: '',
                 placeholder: 'Your password...',
@@ -72,7 +72,7 @@ const fieldSetList: Array<FormFieldSetType> = [
             },
             {
                 name: 'check me',
-                fieldComponent: InputCheckbox,
+                inputComponent: InputCheckbox,
                 validate: getIsRequired,
                 defaultValue: true,
                 placeholder: null,
