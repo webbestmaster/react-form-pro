@@ -90,11 +90,11 @@ export function Form(props: PropsType): Node {
 
         return (
             <InputComponent
-                isHidden={isHidden}
                 accept={accept}
                 additional={additional}
                 defaultValue={defaultValue}
                 errorList={errorList}
+                isHidden={isHidden}
                 key={name}
                 label={label}
                 name={name}

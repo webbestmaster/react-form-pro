@@ -14,7 +14,7 @@ export type InputComponentOnChangeType = (value: FromInputValueType) => void;
 
 export type FormValidateType = (name: string, value: FromInputValueType, formData: FormDataType) => Array<Error>;
 
-declare export type InputComponentOptionType = {|
+export type InputComponentOptionType = {|
     +title: string | number,
     +value: string | number,
 |};
