@@ -14,6 +14,11 @@ export type InputComponentOnChangeType = (value: FromInputValueType) => void;
 
 export type FormValidateType = (name: string, value: FromInputValueType, formData: FormDataType) => Array<Error>;
 
+declare export type InputComponentOptionType = {|
+    +title: string | number,
+    +value: string | number,
+|};
+
 export type InputComponentPropsType = {|
     +name: string,
     +onChange: InputComponentOnChangeType,
@@ -22,11 +27,17 @@ export type InputComponentPropsType = {|
     +defaultValue: FromInputValueType,
     +placeholder: Node,
     +label: Node,
-|};
 
-declare export type InputComponentOptionType = {|
-    +title: string | number,
-    +value: string | number,
+    // use as attribute "accept"
+    +accept?: string,
+
+    // use for select
+    +optionList?: Array<InputComponentOptionType>,
+
+    +isHidden?: boolean,
+
+    // for custom data
+    +additional?: mixed,
 |};
 
 export type FieldDataType = {|

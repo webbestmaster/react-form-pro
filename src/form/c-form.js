@@ -74,13 +74,14 @@ export function Form(props: PropsType): Node {
     function renderFieldVisible(fieldData: FieldDataType): Node {
         const {
             name,
-            inputComponent: InputComponent,
             defaultValue,
             placeholder,
             label,
             accept,
             optionList,
+            isHidden,
             additional,
+            inputComponent: InputComponent,
         } = fieldData;
 
         const onChangeFieldHandler = createOnChangeFieldHandler(fieldData);
@@ -89,6 +90,7 @@ export function Form(props: PropsType): Node {
 
         return (
             <InputComponent
+                isHidden={isHidden}
                 accept={accept}
                 additional={additional}
                 defaultValue={defaultValue}
