@@ -19,4 +19,5 @@ export type {
     FromPrimitiveInputValueType,
     InputComponentOnChangeType,
     InputComponentPropsType,
+    InputComponentOptionType,
 } from './form/form-type';

@@ -72,7 +72,16 @@ export function Form(props: PropsType): Node {
     }
 
     function renderFieldVisible(fieldData: FieldDataType): Node {
-        const {name, inputComponent: InputComponent, defaultValue, placeholder, label} = fieldData;
+        const {
+            name,
+            inputComponent: InputComponent,
+            defaultValue,
+            placeholder,
+            label,
+            accept,
+            optionList,
+            additional,
+        } = fieldData;
 
         const onChangeFieldHandler = createOnChangeFieldHandler(fieldData);
         const onBlurFieldHandler = createOnBlurFieldHandler(fieldData);
@@ -80,6 +89,8 @@ export function Form(props: PropsType): Node {
 
         return (
             <InputComponent
+                accept={accept}
+                additional={additional}
                 defaultValue={defaultValue}
                 errorList={errorList}
                 key={name}
@@ -87,6 +98,7 @@ export function Form(props: PropsType): Node {
                 name={name}
                 onBlur={onBlurFieldHandler}
                 onChange={onChangeFieldHandler}
+                optionList={optionList}
                 placeholder={placeholder}
             />
         );

@@ -24,6 +24,11 @@ export type InputComponentPropsType = {|
     +label: Node,
 |};
 
+declare export type InputComponentOptionType = {|
+    +title: string | number,
+    +value: string | number,
+|};
+
 export type FieldDataType = {|
     +name: string,
     // eslint-disable-next-line id-match
@@ -32,7 +37,17 @@ export type FieldDataType = {|
     +defaultValue: FromInputValueType,
     +placeholder: Node,
     +label: Node,
+
+    // use as attribute "accept"
+    +accept?: string,
+
+    // use for select
+    +optionList?: Array<InputComponentOptionType>,
+
     +isHidden?: boolean,
+
+    // for custom data
+    +additional?: mixed,
 |};
 
 export type FormFieldSetType = {|

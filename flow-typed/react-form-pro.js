@@ -29,6 +29,11 @@ declare module 'react-form-pro' {
         +label: React$Node,
     |};
 
+    declare export type InputComponentOptionType = {|
+        +title: string | number,
+        +value: string | number,
+    |};
+
     declare export type FieldDataType = {|
         +name: string,
         // eslint-disable-next-line id-match
@@ -39,7 +44,17 @@ declare module 'react-form-pro' {
         +placeholder: React$Node,
         // eslint-disable-next-line id-match
         +label: React$Node,
+
+        // use as attribute "accept"
+        +accept?: string,
+
+        // use for select
+        +optionList?: Array<InputComponentOptionType>,
+
         +isHidden?: boolean,
+
+        // for custom data
+        +additional?: mixed,
     |};
 
     declare export type FormFieldSetType = {|
