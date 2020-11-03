@@ -1,19 +1,19 @@
 // @flow
 
 declare module 'react-form-pro' {
-    declare export type FromPrimitiveInputValueType = string | number | boolean | null | File;
+    declare export type FormPrimitiveInputValueType = string | number | boolean | null | File;
 
-    declare export type FromInputValueType = FromPrimitiveInputValueType | Array<FromPrimitiveInputValueType>;
+    declare export type FormInputValueType = FormPrimitiveInputValueType | Array<FormPrimitiveInputValueType>;
 
-    declare export type FormDataType = {+[key: string]: FromInputValueType};
+    declare export type FormDataType = {+[key: string]: FormInputValueType};
 
     declare export type FormValidationType = {+[key: string]: Array<Error>};
 
-    declare export type InputComponentOnChangeType = (value: FromInputValueType) => void;
+    declare export type InputComponentOnChangeType = (value: FormInputValueType) => void;
 
     declare export type FormValidateType = (
         name: string,
-        value: FromInputValueType,
+        value: FormInputValueType,
         formData: FormDataType,
     ) => Array<Error>;
 
@@ -27,7 +27,7 @@ declare module 'react-form-pro' {
         +onChange: InputComponentOnChangeType,
         +onBlur: InputComponentOnChangeType,
         +errorList: Array<Error>,
-        +defaultValue: FromInputValueType,
+        +defaultValue: FormInputValueType,
         // eslint-disable-next-line id-match
         +placeholder: React$Node,
         // eslint-disable-next-line id-match
@@ -50,11 +50,34 @@ declare module 'react-form-pro' {
         // eslint-disable-next-line id-match
         +inputComponent: React$ComponentType<InputComponentPropsType>,
         +validate: FormValidateType,
-        +defaultValue: FromInputValueType,
+        +defaultValue: FormInputValueType,
         // eslint-disable-next-line id-match
         +placeholder: React$Node,
         // eslint-disable-next-line id-match
         +label: React$Node,
+
+        // use as attribute "accept"
+        +accept?: string,
+
+        // use for select
+        +optionList?: Array<InputComponentOptionType>,
+
+        +isHidden?: boolean,
+
+        // for custom data
+        +additional?: mixed,
+    |};
+
+    declare export type ShapeFieldDataType = {|
+        +name?: string,
+        // eslint-disable-next-line id-match
+        +inputComponent?: React$ComponentType<InputComponentPropsType>,
+        +validate?: FormValidateType,
+        +defaultValue?: FormInputValueType,
+        // eslint-disable-next-line id-match
+        +placeholder?: React$Node,
+        // eslint-disable-next-line id-match
+        +label?: React$Node,
 
         // use as attribute "accept"
         +accept?: string,
@@ -98,10 +121,10 @@ declare module 'react-form-pro' {
 
     declare export var formButtonTypeName: {+[key: FormButtonTypeNameType]: FormButtonTypeNameType};
 
-    declare export function noValidate(name: string, value: FromInputValueType, formData: FormDataType): Array<Error>;
+    declare export function noValidate(name: string, value: FormInputValueType, formData: FormDataType): Array<Error>;
     declare export function validateRequired(
         name: string,
-        value: FromInputValueType,
+        value: FormInputValueType,
         formData: FormDataType,
     ): Array<Error>;
 }

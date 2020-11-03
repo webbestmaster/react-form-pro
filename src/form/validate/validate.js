@@ -2,17 +2,17 @@
 
 /* global document */
 
-import type {FormDataType, FromInputValueType} from '../form-type';
+import type {FormDataType, FormInputValueType} from '../form-type';
 import {isBoolean, isFile, isNull, isNumber, isString} from '../../lib/is';
 
 const errorMessageFieldRequired = 'Required field!';
 
-export function noValidate(name: string, value: FromInputValueType, formData: FormDataType): Array<Error> {
+export function noValidate(name: string, value: FormInputValueType, formData: FormDataType): Array<Error> {
     return [];
 }
 
 // eslint-disable-next-line complexity
-export function validateRequired(name: string, value: FromInputValueType, formData: FormDataType): Array<Error> {
+export function validateRequired(name: string, value: FormInputValueType, formData: FormDataType): Array<Error> {
     const requiredErrorList = [new Error(errorMessageFieldRequired)];
 
     if (isString(value)) {
