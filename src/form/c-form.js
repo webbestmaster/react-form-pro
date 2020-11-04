@@ -184,7 +184,7 @@ export function Form(props: PropsType): Node {
     }
 
     function renderButtonList(buttonDataList: Array<FormButtonType>): Node {
-        return <div>{buttonDataList.map(renderButton)}</div>;
+        return <footer>{buttonDataList.map(renderButton)}</footer>;
     }
 
     return (
