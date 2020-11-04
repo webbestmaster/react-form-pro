@@ -94,6 +94,21 @@ export type FormButtonType = {|
     +type: FormButtonTypeNameType,
     +isPrimary?: boolean,
     +onClick?: () => void,
+    +accessKey?: string,
+
+    // for custom data
+    additional?: mixed,
+|};
+
+export type ButtonComponentPropsType = {|
+    +title: Node,
+    +type: FormButtonTypeNameType,
+    +isPrimary?: boolean,
+    +onClick?: () => void,
+    +accessKey?: string,
+
+    // for custom data
+    +additional?: mixed,
 |};
 
 export type FormPropsType = {|
@@ -101,5 +116,7 @@ export type FormPropsType = {|
     +fieldSetList: Array<FormFieldSetType>,
     +onSubmit: (formData: FormDataType) => mixed,
     +onError: (errorList: Array<Error>, formData: FormDataType) => mixed,
+    // eslint-disable-next-line id-match
+    +buttonComponent: React$ComponentType<ButtonComponentPropsType>,
     +buttonList: Array<FormButtonType>,
 |};

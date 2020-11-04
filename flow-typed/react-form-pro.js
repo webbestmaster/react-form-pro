@@ -105,6 +105,22 @@ declare module 'react-form-pro' {
         +type: FormButtonTypeNameType,
         +isPrimary?: boolean,
         +onClick?: () => void,
+        +accessKey?: string,
+
+        // for custom data
+        additional?: mixed,
+    |};
+
+    declare export type ButtonComponentPropsType = {|
+        // eslint-disable-next-line id-match
+        +title: React$Node,
+        +type: FormButtonTypeNameType,
+        +isPrimary?: boolean,
+        +onClick?: () => void,
+        +accessKey?: string,
+
+        // for custom data
+        +additional?: mixed,
     |};
 
     declare export type FormPropsType = {|
@@ -113,6 +129,8 @@ declare module 'react-form-pro' {
         +fieldSetList: Array<FormFieldSetType>,
         +onSubmit: (formData: FormDataType) => mixed,
         +onError: (errorList: Array<Error>, formData: FormDataType) => mixed,
+        // eslint-disable-next-line id-match
+        +buttonComponent: React$ComponentType<ButtonComponentPropsType>,
         +buttonList: Array<FormButtonType>,
     |};
 

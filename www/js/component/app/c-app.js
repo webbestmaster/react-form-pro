@@ -12,6 +12,7 @@ import type {FormButtonType, FormDataType, FormFieldSetType} from '../../../../s
 import {InputText} from '../../../../src/form/field/input-text/c-input-text';
 import {formButtonTypeName} from '../../../../src/form/form-const';
 import {InputCheckbox} from '../../../../src/form/field/input-checkbox/c-input-checkbox';
+import {Button} from '../../../../src/form/button/c-button';
 
 function handleSubmit(formData: FormDataType) {
     console.log('handleSubmit', formData);
@@ -90,6 +91,7 @@ export function App(): Node {
     return (
         <div className="example-wrapper">
             <Form
+                buttonComponent={Button}
                 buttonList={buttonList}
                 fieldSetList={fieldSetList}
                 onError={handleError}

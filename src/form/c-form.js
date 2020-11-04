@@ -24,7 +24,7 @@ import {getDefaultFormData} from './form-helper';
 type PropsType = FormPropsType;
 
 export function Form(props: PropsType): Node {
-    const {fieldSetList, onError, onSubmit, buttonList, title} = props;
+    const {fieldSetList, onError, onSubmit, buttonList, title, buttonComponent: ButtonComponent} = props;
 
     const [formData, setFomData] = useState<FormDataType>(getDefaultFormData(props));
     const [formValidation, setFormValidation] = useState<FormValidationType>({});
@@ -168,15 +168,18 @@ export function Form(props: PropsType): Node {
     }
 
     function renderButton(buttonData: FormButtonType, index: number): Node {
-        const {isPrimary, onClick, title: buttonContent, type} = buttonData;
+        const {isPrimary, onClick, title: buttonContent, type, accessKey, additional} = buttonData;
 
         return (
-            // eslint-disable-next-line react/button-has-type
-            <button key={index} onClick={onClick} type={type}>
-                {buttonContent}
-                {' - '}
-                {isPrimary === true ? 'primary' : 'secondary'}
-            </button>
+            <ButtonComponent
+                accessKey={accessKey}
+                additional={additional}
+                isPrimary={isPrimary}
+                key={index}
+                onClick={onClick}
+                title={buttonContent}
+                type={type}
+            />
         );
     }
 
