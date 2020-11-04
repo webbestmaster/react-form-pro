@@ -119,4 +119,5 @@ export type FormPropsType = {|
     // eslint-disable-next-line id-match
     +buttonComponent: React$ComponentType<ButtonComponentPropsType>,
     +buttonList: Array<FormButtonType>,
+    +className?: string,
 |};

@@ -6,6 +6,8 @@ import {hasProperty} from '../lib/is';
 
 import {IsRender} from '../layout/is-render/c-is-render';
 
+import {classNames} from '../lib/css';
+
 import fieldStyle from './field/field.scss';
 
 import type {
@@ -24,7 +26,7 @@ import {getDefaultFormData} from './form-helper';
 type PropsType = FormPropsType;
 
 export function Form(props: PropsType): Node {
-    const {fieldSetList, onError, onSubmit, buttonList, title, buttonComponent: ButtonComponent} = props;
+    const {fieldSetList, onError, onSubmit, buttonList, title, buttonComponent: ButtonComponent, className} = props;
 
     const [formData, setFomData] = useState<FormDataType>(getDefaultFormData(props));
     const [formValidation, setFormValidation] = useState<FormValidationType>({});
@@ -187,8 +189,10 @@ export function Form(props: PropsType): Node {
         return <footer>{buttonDataList.map(renderButton)}</footer>;
     }
 
+    const formClassName = classNames(fieldStyle.form, className);
+
     return (
-        <form action="#" className={fieldStyle.form} method="post" onSubmit={handleFormSubmit}>
+        <form action="#" className={formClassName} method="post" onSubmit={handleFormSubmit}>
             <h3>{title}</h3>
             {renderFieldSetList(fieldSetList)}
             {renderButtonList(buttonList)}

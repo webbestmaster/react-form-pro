@@ -108,7 +108,7 @@ declare module 'react-form-pro' {
         +accessKey?: string,
 
         // for custom data
-        additional?: mixed,
+        +additional?: mixed,
     |};
 
     declare export type ButtonComponentPropsType = {|
@@ -132,6 +132,7 @@ declare module 'react-form-pro' {
         // eslint-disable-next-line id-match
         +buttonComponent: React$ComponentType<ButtonComponentPropsType>,
         +buttonList: Array<FormButtonType>,
+        +className?: string,
     |};
 
     // eslint-disable-next-line id-match
