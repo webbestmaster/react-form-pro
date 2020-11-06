@@ -4,12 +4,6 @@ import React, {type Node, useState} from 'react';
 
 import {hasProperty} from '../lib/is';
 
-import {IsRender} from '../layout/is-render/c-is-render';
-
-import {classNames} from '../lib/css';
-
-import fieldStyle from './field/field.scss';
-
 import type {
     FieldDataType,
     FormButtonType,
@@ -22,6 +16,7 @@ import type {
 } from './form-type';
 
 import {getDefaultFormData} from './form-helper';
+import {style} from './form-const';
 
 type PropsType = FormPropsType;
 
@@ -67,7 +62,7 @@ export function Form(props: PropsType): Node {
         const {name} = fieldData;
 
         return (
-            <div className={fieldStyle.form_input__hidden} key={name}>
+            <div key={name} style={style.hidden}>
                 {renderFieldVisible(fieldData)}
             </div>
         );
@@ -110,13 +105,10 @@ export function Form(props: PropsType): Node {
 
     function renderFieldSet(fieldSetData: FormFieldSetType, index: number): Node {
         const {legend, inputList} = fieldSetData;
-        const hasLegend = Boolean(legend);
 
         return (
             <fieldset key={index}>
-                <IsRender isRender={hasLegend}>
-                    <legend>{legend}</legend>
-                </IsRender>
+                {legend ? <legend>{legend}</legend> : null}
 
                 {inputList.map(renderInput)}
             </fieldset>
@@ -189,7 +181,7 @@ export function Form(props: PropsType): Node {
         return <footer>{buttonDataList.map(renderButton)}</footer>;
     }
 
-    const formClassName = classNames(fieldStyle.form, className);
+    const formClassName = className || '';
 
     return (
         <form action="#" className={formClassName} method="post" onSubmit={handleFormSubmit}>

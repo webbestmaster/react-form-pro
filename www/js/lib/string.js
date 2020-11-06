@@ -1,6 +1,6 @@
 // @flow
 
-import {hasProperty, isString} from './is';
+import {hasProperty, isString} from '../../../src/lib/is';
 
 const cyrillicToLatinMap = {
     /* eslint-disable id-length, id-match */

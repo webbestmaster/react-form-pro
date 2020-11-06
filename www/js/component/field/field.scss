@@ -14,10 +14,6 @@ $form-input-side-padding: 7px;
         border-color: $form-input-border-color-invalid;
         box-shadow: 0 0 4px 1px $form-input-border-color-invalid;
     }
-
-    .form_input__hidden {
-        display: none;
-    }
 }
 
 %form--label-wrapper,

@@ -2,9 +2,9 @@
 
 import React, {Component, type Node} from 'react';
 
-import {isString} from '../../lib/is';
+import {isString} from '../../../../src/lib/is';
 
-import type {ButtonComponentPropsType} from '../form-type';
+import type {ButtonComponentPropsType} from '../../../../src/form/form-type';
 
 import buttonStyle from './button.scss';
 

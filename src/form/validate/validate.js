@@ -3,7 +3,7 @@
 /* global document */
 
 import type {FormDataType, FormInputValueType} from '../form-type';
-import {isBoolean, isFile, isNull, isNumber, isString} from '../../lib/is';
+import {isBoolean, isFile, isNull, isString, isUndefined} from '../../lib/is';
 
 const errorMessageFieldRequired = 'Required field!';
 
@@ -11,34 +11,45 @@ export function noValidate(name: string, value: FormInputValueType, formData: Fo
     return [];
 }
 
-// eslint-disable-next-line complexity
+// eslint-disable-next-line complexity, sonarjs/cognitive-complexity
 export function validateRequired(name: string, value: FormInputValueType, formData: FormDataType): Array<Error> {
     const requiredErrorList = [new Error(errorMessageFieldRequired)];
+    const emptyList = [];
 
-    if (isString(value)) {
-        return value === '' ? requiredErrorList : [];
+    // check undefined
+    if (isUndefined(value)) {
+        return requiredErrorList;
     }
 
-    if (isNumber(value)) {
-        return value <= 0 || Number.isNaN(value) ? requiredErrorList : [];
-    }
-
-    if (isBoolean(value)) {
-        return value === false ? requiredErrorList : [];
-    }
-
+    // check null
     if (isNull(value)) {
         return requiredErrorList;
     }
 
+    // check number and NaN
+    if (typeof value === 'number') {
+        return Number.isNaN(value) || value <= 0 ? requiredErrorList : emptyList;
+    }
+
+    // check string
+    if (isString(value)) {
+        return value.trim() === '' ? requiredErrorList : emptyList;
+    }
+
+    // check boolean
+    if (isBoolean(value)) {
+        return value === false ? requiredErrorList : emptyList;
+    }
+
+    // check Array
     if (Array.isArray(value)) {
-        return value.length === 0 ? requiredErrorList : [];
+        return value.length === 0 ? requiredErrorList : emptyList;
     }
 
+    // check File
     if (isFile(value)) {
-        return [];
+        return emptyList;
     }
 
-    console.log(value);
-    throw new Error('Type has no validation! Add validation here!');
+    return requiredErrorList;
 }

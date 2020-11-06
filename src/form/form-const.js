@@ -7,3 +7,7 @@ export const formButtonTypeName: {+[key: FormButtonTypeNameType]: FormButtonType
     submit: 'submit',
     reset: 'reset',
 };
+
+export const style = {
+    hidden: {display: 'none'},
+};

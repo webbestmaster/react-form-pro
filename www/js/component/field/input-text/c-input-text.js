@@ -3,9 +3,9 @@
 import React, {type Node} from 'react';
 
 import {classNames} from '../../../lib/css';
-import type {InputComponentPropsType} from '../../form-type';
+import type {InputComponentPropsType} from '../../../../../src/form/form-type';
 import fieldStyle from '../field.scss';
-import {isString} from '../../../lib/is';
+import {isString} from '../../../../../src/lib/is';
 import {cleanText} from '../../../lib/string';
 
 type PropsType = InputComponentPropsType;

@@ -9,10 +9,10 @@ import React, {type Node} from 'react';
 import {Form} from '../../../../src/form';
 import {validateRequired} from '../../../../src/form/validate/validate';
 import type {FormButtonType, FormDataType, FormFieldSetType} from '../../../../src/form/form-type';
-import {InputText} from '../../../../src/form/field/input-text/c-input-text';
+import {InputText} from '../field/input-text/c-input-text';
 import {formButtonTypeName} from '../../../../src/form/form-const';
-import {InputCheckbox} from '../../../../src/form/field/input-checkbox/c-input-checkbox';
-import {Button} from '../../../../src/form/button/c-button';
+import {InputCheckbox} from '../field/input-checkbox/c-input-checkbox';
+import {Button} from '../button/c-button';
 
 function handleSubmit(formData: FormDataType) {
     console.log('handleSubmit', formData);

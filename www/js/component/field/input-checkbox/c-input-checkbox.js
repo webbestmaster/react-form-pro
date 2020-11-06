@@ -3,9 +3,9 @@
 import React, {type Node} from 'react';
 
 import {classNames} from '../../../lib/css';
-import type {InputComponentPropsType} from '../../form-type';
+import type {InputComponentPropsType} from '../../../../../src/form/form-type';
 import fieldStyle from '../field.scss';
-import {isBoolean} from '../../../lib/is';
+import {isBoolean} from '../../../../../src/lib/is';
 
 import inputCheckboxStyle from './input-checkbox.scss';
 
