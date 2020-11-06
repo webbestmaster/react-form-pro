@@ -33,7 +33,6 @@ Use `./@types/index.d.ts`.
 // @flow
 import React, {type Node} from 'react';
 import {Form} from 'react-form-pro';
-import reactFormProStyle from 'react-form-pro/dist/style.css';
 
 export function App(): Node {
     return (
