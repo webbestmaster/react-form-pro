@@ -1,3 +1,6 @@
+// WARNING: index.d.ts is not tested
+// TODO: test index.d.ts in typescript project
+
 declare module 'react-form-pro' {
     export type FormPrimitiveInputValueType = string | number | boolean | null | File;
 
