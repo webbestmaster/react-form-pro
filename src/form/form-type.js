@@ -114,8 +114,8 @@ export type ButtonComponentPropsType = {|
 export type FormPropsType = {|
     +title: Node,
     +fieldSetList: Array<FormFieldSetType>,
-    +onSubmit: (formData: FormDataType) => mixed,
-    +onError: (errorList: Array<Error>, formData: FormDataType) => mixed,
+    +onSubmit: (formData: FormDataType) => void,
+    +onError: (errorList: Array<Error>, formData: FormDataType) => void,
     // eslint-disable-next-line id-match
     +buttonComponent: React$ComponentType<ButtonComponentPropsType>,
     +buttonList: Array<FormButtonType>,
