@@ -1,11 +1,11 @@
 ```javascript
 // @flow
 
-import React, {type Node} from 'react';
+import React from 'react';
 import {Form} from 'react-form-pro';
 import reactformProStyle from 'react-form-pro/dist/style.css';
 
-export function App(): Node {
+export function App(): React$Node {
     return (
         &lt;Form/&gt;
     );

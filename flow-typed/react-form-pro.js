@@ -28,9 +28,7 @@ declare module 'react-form-pro' {
         +onBlur: InputComponentOnChangeType,
         +errorList: Array<Error>,
         +defaultValue: FormInputValueType,
-        // eslint-disable-next-line id-match
         +placeholder: React$Node,
-        // eslint-disable-next-line id-match
         +label: React$Node,
 
         // use as attribute "accept"
@@ -47,13 +45,10 @@ declare module 'react-form-pro' {
 
     declare export type FieldDataType = {|
         +name: string,
-        // eslint-disable-next-line id-match
         +inputComponent: React$ComponentType<InputComponentPropsType>,
         +validate: FormValidateType,
         +defaultValue: FormInputValueType,
-        // eslint-disable-next-line id-match
         +placeholder: React$Node,
-        // eslint-disable-next-line id-match
         +label: React$Node,
 
         // use as attribute "accept"
@@ -68,15 +63,13 @@ declare module 'react-form-pro' {
         +additional?: mixed,
     |};
 
+    /*
     declare export type ShapeFieldDataType = {|
         +name?: string,
-        // eslint-disable-next-line id-match
         +inputComponent?: React$ComponentType<InputComponentPropsType>,
         +validate?: FormValidateType,
         +defaultValue?: FormInputValueType,
-        // eslint-disable-next-line id-match
         +placeholder?: React$Node,
-        // eslint-disable-next-line id-match
         +label?: React$Node,
 
         // use as attribute "accept"
@@ -90,9 +83,9 @@ declare module 'react-form-pro' {
         // for custom data
         +additional?: mixed,
     |};
+*/
 
     declare export type FormFieldSetType = {|
-        // eslint-disable-next-line id-match
         +legend?: React$Node,
         +inputList: Array<FieldDataType>,
     |};
@@ -100,7 +93,6 @@ declare module 'react-form-pro' {
     declare export type FormButtonTypeNameType = 'button' | 'submit' | 'reset';
 
     declare export type FormButtonType = {|
-        // eslint-disable-next-line id-match
         +title: React$Node,
         +type: FormButtonTypeNameType,
         +isPrimary?: boolean,
@@ -112,7 +104,6 @@ declare module 'react-form-pro' {
     |};
 
     declare export type ButtonComponentPropsType = {|
-        // eslint-disable-next-line id-match
         +title: React$Node,
         +type: FormButtonTypeNameType,
         +isPrimary?: boolean,
@@ -124,18 +115,15 @@ declare module 'react-form-pro' {
     |};
 
     declare export type FormPropsType = {|
-        // eslint-disable-next-line id-match
         +title: React$Node,
         +fieldSetList: Array<FormFieldSetType>,
         +onSubmit: (formData: FormDataType) => void,
         +onError: (errorList: Array<Error>, formData: FormDataType) => void,
-        // eslint-disable-next-line id-match
         +buttonComponent: React$ComponentType<ButtonComponentPropsType>,
         +buttonList: Array<FormButtonType>,
         +className?: string,
     |};
 
-    // eslint-disable-next-line id-match
     declare export var Form: React$ComponentType<FormPropsType>;
 
     declare export var formButtonTypeName: {+[key: FormButtonTypeNameType]: FormButtonTypeNameType};

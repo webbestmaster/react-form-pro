@@ -1,8 +1,6 @@
 // @flow
 
-import React, {Component, type Node} from 'react';
-
-import {isString} from '../../../../src/lib/is';
+import React from 'react';
 
 import type {ButtonComponentPropsType} from '../../../../src/form/form-type';
 
@@ -10,7 +8,7 @@ import buttonStyle from './button.scss';
 
 type PropsType = ButtonComponentPropsType;
 
-export function Button(props: PropsType): Node {
+export function Button(props: PropsType): React$Node {
     const {accessKey, onClick, additional, isPrimary, title, type} = props;
 
     return (

@@ -1,6 +1,6 @@
 // @flow
 
-import React, {type Node} from 'react';
+import React from 'react';
 
 import {classNames} from '../../../lib/css';
 import type {InputComponentPropsType} from '../../../../../src/form/form-type';
@@ -10,7 +10,7 @@ import {cleanText} from '../../../lib/string';
 
 type PropsType = InputComponentPropsType;
 
-export function InputText(props: PropsType): Node {
+export function InputText(props: PropsType): React$Node {
     const {name, onChange, onBlur, errorList, defaultValue, placeholder, label} = props;
 
     function handleOnChange(evt: SyntheticEvent<HTMLInputElement>) {

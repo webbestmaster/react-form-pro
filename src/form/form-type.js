@@ -42,7 +42,6 @@ export type InputComponentPropsType = {|
 
 export type FieldDataType = {|
     +name: string,
-    // eslint-disable-next-line id-match
     +inputComponent: React$ComponentType<InputComponentPropsType>,
     +validate: FormValidateType,
     +defaultValue: FormInputValueType,
@@ -61,9 +60,9 @@ export type FieldDataType = {|
     +additional?: mixed,
 |};
 
+/*
 export type ShapeFieldDataType = {|
     +name?: string,
-    // eslint-disable-next-line id-match
     +inputComponent?: React$ComponentType<InputComponentPropsType>,
     +validate?: FormValidateType,
     +defaultValue?: FormInputValueType,
@@ -81,6 +80,7 @@ export type ShapeFieldDataType = {|
     // for custom data
     +additional?: mixed,
 |};
+*/
 
 export type FormFieldSetType = {|
     +legend?: Node,
@@ -116,7 +116,6 @@ export type FormPropsType = {|
     +fieldSetList: Array<FormFieldSetType>,
     +onSubmit: (formData: FormDataType) => void,
     +onError: (errorList: Array<Error>, formData: FormDataType) => void,
-    // eslint-disable-next-line id-match
     +buttonComponent: React$ComponentType<ButtonComponentPropsType>,
     +buttonList: Array<FormButtonType>,
     +className?: string,

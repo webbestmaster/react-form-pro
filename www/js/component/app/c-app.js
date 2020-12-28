@@ -4,7 +4,7 @@
 
 /* global fetch */
 
-import React, {type Node} from 'react';
+import React from 'react';
 
 import {Form} from '../../../../src/form';
 import {validateRequired} from '../../../../src/form/validate/validate';
@@ -87,7 +87,7 @@ const buttonList: Array<FormButtonType> = [
     },
 ];
 
-export function App(): Node {
+export function App(): React$Node {
     return (
         <div className="example-wrapper">
             <Form

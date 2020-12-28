@@ -1,6 +1,6 @@
 // @flow
 
-import React, {type Node} from 'react';
+import React from 'react';
 
 import {classNames} from '../../../lib/css';
 import type {InputComponentPropsType} from '../../../../../src/form/form-type';
@@ -9,7 +9,7 @@ import {isString} from '../../../../../src/lib/is';
 
 type PropsType = InputComponentPropsType;
 
-export function InputPassword(props: PropsType): Node {
+export function InputPassword(props: PropsType): React$Node {
     const {name, onChange, onBlur, errorList, defaultValue, placeholder, label} = props;
 
     function handleOnChange(evt: SyntheticEvent<HTMLInputElement>) {

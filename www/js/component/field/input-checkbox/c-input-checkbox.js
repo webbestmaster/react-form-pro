@@ -1,6 +1,6 @@
 // @flow
 
-import React, {type Node} from 'react';
+import React from 'react';
 
 import {classNames} from '../../../lib/css';
 import type {InputComponentPropsType} from '../../../../../src/form/form-type';
@@ -11,7 +11,7 @@ import inputCheckboxStyle from './input-checkbox.scss';
 
 type PropsType = InputComponentPropsType;
 
-export function InputCheckbox(props: PropsType): Node {
+export function InputCheckbox(props: PropsType): React$Node {
     const {name, onChange, onBlur, errorList, defaultValue, placeholder, label} = props;
 
     if (!isBoolean(defaultValue)) {

@@ -12,7 +12,7 @@ export type {
     FormButtonTypeNameType,
     FormValidationType,
     FieldDataType,
-    ShapeFieldDataType,
+    // ShapeFieldDataType,
     FormDataType,
     FormPropsType,
     FormValidateType,

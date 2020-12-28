@@ -29,10 +29,8 @@ declare module 'react-form-pro' {
         onBlur: InputComponentOnChangeType,
         errorList: Array<Error>,
         defaultValue: FormInputValueType,
-        // eslint-disable-next-line id-match
-        placeholder: React.ReactNode,
-        // eslint-disable-next-line id-match
-        label: React.ReactNode,
+        placeholder: JSX.Element | Array<JSX.Element>,
+        label: JSX.Element | Array<JSX.Element>,
 
         // use as attribute "accept"
         accept?: string,
@@ -48,14 +46,11 @@ declare module 'react-form-pro' {
 
     export interface FieldDataType {
         name: string,
-        // eslint-disable-next-line id-match
         inputComponent: React.FC<InputComponentPropsType>,
         validate: FormValidateType,
         defaultValue: FormInputValueType,
-        // eslint-disable-next-line id-match
-        placeholder: React.ReactNode,
-        // eslint-disable-next-line id-match
-        label: React.ReactNode,
+        placeholder: JSX.Element | Array<JSX.Element>,
+        label: JSX.Element | Array<JSX.Element>,
 
         // use as attribute "accept"
         accept?: string,
@@ -69,16 +64,14 @@ declare module 'react-form-pro' {
         additional?: any,
     }
 
+/*
     export interface ShapeFieldDataType {
         name?: string,
-        // eslint-disable-next-line id-match
         inputComponent?: React.FC<InputComponentPropsType>,
         validate?: FormValidateType,
         defaultValue?: FormInputValueType,
-        // eslint-disable-next-line id-match
-        placeholder?: React.ReactNode,
-        // eslint-disable-next-line id-match
-        label?: React.ReactNode,
+        placeholder?: JSX.Element | Array<JSX.Element>,
+        label?: JSX.Element | Array<JSX.Element>,
 
         // use as attribute "accept"
         accept?: string,
@@ -91,18 +84,17 @@ declare module 'react-form-pro' {
         // for custom data
         additional?: any,
     }
+*/
 
     export interface FormFieldSetType {
-        // eslint-disable-next-line id-match
-        legend?: React.ReactNode,
+        legend?: JSX.Element | Array<JSX.Element>,
         inputList: Array<FieldDataType>,
     }
 
     export type FormButtonTypeNameType = 'button' | 'submit' | 'reset';
 
     export interface FormButtonType {
-        // eslint-disable-next-line id-match
-        title: React.ReactNode,
+        title: JSX.Element | Array<JSX.Element>,
         type: FormButtonTypeNameType,
         isPrimary?: boolean,
         onClick?: () => void,
@@ -113,8 +105,7 @@ declare module 'react-form-pro' {
     }
 
     export interface ButtonComponentPropsType {
-        // eslint-disable-next-line id-match
-        title: React.ReactNode,
+        title: JSX.Element | Array<JSX.Element>,
         type: FormButtonTypeNameType,
         isPrimary?: boolean,
         onClick?: () => void,
@@ -125,18 +116,15 @@ declare module 'react-form-pro' {
     }
 
     export interface FormPropsType {
-        // eslint-disable-next-line id-match
-        title: React.ReactNode,
+        title: JSX.Element | Array<JSX.Element>,
         fieldSetList: Array<FormFieldSetType>,
         onSubmit: (formData: FormDataType) => void,
         onError: (errorList: Array<Error>, formData: FormDataType) => void,
-        // eslint-disable-next-line id-match
         buttonComponent: React.FC<ButtonComponentPropsType>,
         buttonList: Array<FormButtonType>,
         className?: string,
     }
 
-    // eslint-disable-next-line id-match
     export const Form: React.FC<FormPropsType>;
 
     export const formButtonTypeName: { [key in FormButtonTypeNameType]: FormButtonTypeNameType };
