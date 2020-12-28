@@ -31,6 +31,7 @@ declare module 'react-form-pro' {
         +placeholder: React$Node,
         +label: React$Node,
         +isRequired?: boolean,
+        +isWide?: boolean,
 
         // use as attribute "accept"
         +accept?: string,
@@ -52,6 +53,7 @@ declare module 'react-form-pro' {
         +placeholder: React$Node,
         +label: React$Node,
         +isRequired?: boolean,
+        +isWide?: boolean,
 
         // use as attribute "accept"
         +accept?: string,
@@ -100,6 +102,7 @@ declare module 'react-form-pro' {
         +isPrimary?: boolean,
         +onClick?: () => void,
         +accessKey?: string,
+        +isWide?: boolean,
 
         // for custom data
         +additional?: mixed,
@@ -111,6 +114,7 @@ declare module 'react-form-pro' {
         +isPrimary?: boolean,
         +onClick?: () => void,
         +accessKey?: string,
+        +isWide?: boolean,
 
         // for custom data
         +additional?: mixed,

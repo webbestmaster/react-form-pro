@@ -26,6 +26,7 @@ export type InputComponentPropsType = {|
     +placeholder: React$Node,
     +label: React$Node,
     +isRequired?: boolean,
+    +isWide?: boolean,
 
     // use as attribute "accept"
     +accept?: string,
@@ -47,6 +48,7 @@ export type FieldDataType = {|
     +placeholder: React$Node,
     +label: React$Node,
     +isRequired?: boolean,
+    +isWide?: boolean,
 
     // use as attribute "accept"
     +accept?: string,
@@ -95,6 +97,7 @@ export type FormButtonType = {|
     +isPrimary?: boolean,
     +onClick?: () => void,
     +accessKey?: string,
+    +isWide?: boolean,
 
     // for custom data
     additional?: mixed,
@@ -106,6 +109,7 @@ export type ButtonComponentPropsType = {|
     +isPrimary?: boolean,
     +onClick?: () => void,
     +accessKey?: string,
+    +isWide?: boolean,
 
     // for custom data
     +additional?: mixed,

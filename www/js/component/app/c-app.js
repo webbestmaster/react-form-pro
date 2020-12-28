@@ -86,6 +86,7 @@ const buttonList: Array<FormButtonType> = [
         onClick: console.log,
         title: 'apply form',
         type: formButtonTypeName.submit,
+        isWide: false,
     },
 ];
 

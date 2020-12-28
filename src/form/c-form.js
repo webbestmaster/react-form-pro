@@ -80,6 +80,7 @@ export function Form(props: PropsType): React$Node {
             additional,
             inputComponent: InputComponent,
             isRequired,
+            isWide,
         } = fieldData;
 
         const onChangeFieldHandler = createOnChangeFieldHandler(fieldData);
@@ -94,6 +95,7 @@ export function Form(props: PropsType): React$Node {
                 errorList={errorList}
                 isHidden={isHidden}
                 isRequired={isRequired}
+                isWide={isWide}
                 key={name}
                 label={label}
                 name={name}
@@ -164,13 +166,14 @@ export function Form(props: PropsType): React$Node {
     }
 
     function renderButton(buttonData: FormButtonType, index: number): React$Node {
-        const {isPrimary, onClick, title: buttonContent, type, accessKey, additional} = buttonData;
+        const {isPrimary, onClick, title: buttonContent, type, accessKey, isWide, additional} = buttonData;
 
         return (
             <ButtonComponent
                 accessKey={accessKey}
                 additional={additional}
                 isPrimary={isPrimary}
+                isWide={isWide}
                 key={index}
                 onClick={onClick}
                 title={buttonContent}

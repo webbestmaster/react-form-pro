@@ -29,6 +29,7 @@ declare module 'react-form-pro' {
         placeholder: JSX.Element | Array<JSX.Element> | string,
         label: JSX.Element | Array<JSX.Element> | string,
         isRequired?: boolean,
+        isWide?: boolean,
 
         // use as attribute "accept"
         accept?: string,
@@ -50,6 +51,7 @@ declare module 'react-form-pro' {
         placeholder: JSX.Element | Array<JSX.Element> | string,
         label: JSX.Element | Array<JSX.Element> | string,
         isRequired?: boolean,
+        isWide?: boolean,
 
         // use as attribute "accept"
         accept?: string,
@@ -98,6 +100,7 @@ declare module 'react-form-pro' {
         isPrimary?: boolean,
         onClick?: () => void,
         accessKey?: string,
+        isWide?: boolean,
 
         // for custom data
         additional?: any,
@@ -109,6 +112,7 @@ declare module 'react-form-pro' {
         isPrimary?: boolean,
         onClick?: () => void,
         accessKey?: string,
+        isWide?: boolean,
 
         // for custom data
         additional?: any,
