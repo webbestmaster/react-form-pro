@@ -12,7 +12,7 @@ import inputCheckboxStyle from './input-checkbox.scss';
 type PropsType = InputComponentPropsType;
 
 export function InputCheckbox(props: PropsType): React$Node {
-    const {name, onChange, onBlur, errorList, defaultValue, placeholder, label} = props;
+    const {name, onChange, onBlur, errorList, defaultValue, placeholder, label, isRequired} = props;
 
     if (!isBoolean(defaultValue)) {
         console.error('InputCheckbox: Support Boolean Only');

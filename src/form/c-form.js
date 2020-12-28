@@ -1,6 +1,6 @@
 // @flow
 
-import React, {type Node, useState} from 'react';
+import React, {useState} from 'react';
 
 import {hasProperty} from '../lib/is';
 
@@ -20,7 +20,7 @@ import {style} from './form-const';
 
 type PropsType = FormPropsType;
 
-export function Form(props: PropsType): Node {
+export function Form(props: PropsType): React$Node {
     const {fieldSetList, onError, onSubmit, buttonList, title, buttonComponent: ButtonComponent, className} = props;
 
     const [formData, setFomData] = useState<FormDataType>(getDefaultFormData(props));
@@ -52,13 +52,13 @@ export function Form(props: PropsType): Node {
         };
     }
 
-    function renderInput(fieldData: FieldDataType): Node {
+    function renderInput(fieldData: FieldDataType): React$Node {
         const {isHidden} = fieldData;
 
         return isHidden === true ? renderFieldHidden(fieldData) : renderFieldVisible(fieldData);
     }
 
-    function renderFieldHidden(fieldData: FieldDataType): Node {
+    function renderFieldHidden(fieldData: FieldDataType): React$Node {
         const {name} = fieldData;
 
         return (
@@ -68,7 +68,7 @@ export function Form(props: PropsType): Node {
         );
     }
 
-    function renderFieldVisible(fieldData: FieldDataType): Node {
+    function renderFieldVisible(fieldData: FieldDataType): React$Node {
         const {
             name,
             defaultValue,
@@ -79,6 +79,7 @@ export function Form(props: PropsType): Node {
             isHidden,
             additional,
             inputComponent: InputComponent,
+            isRequired,
         } = fieldData;
 
         const onChangeFieldHandler = createOnChangeFieldHandler(fieldData);
@@ -92,6 +93,7 @@ export function Form(props: PropsType): Node {
                 defaultValue={defaultValue}
                 errorList={errorList}
                 isHidden={isHidden}
+                isRequired={isRequired}
                 key={name}
                 label={label}
                 name={name}
@@ -103,7 +105,7 @@ export function Form(props: PropsType): Node {
         );
     }
 
-    function renderFieldSet(fieldSetData: FormFieldSetType, index: number): Node {
+    function renderFieldSet(fieldSetData: FormFieldSetType, index: number): React$Node {
         const {legend, inputList} = fieldSetData;
 
         return (
@@ -115,7 +117,7 @@ export function Form(props: PropsType): Node {
         );
     }
 
-    function renderFieldSetList(fieldSetListArgument: Array<FormFieldSetType>): Array<Node> {
+    function renderFieldSetList(fieldSetListArgument: Array<FormFieldSetType>): Array<React$Node> {
         return fieldSetListArgument.map(renderFieldSet);
     }
 
@@ -161,7 +163,7 @@ export function Form(props: PropsType): Node {
         onError(errorList, formData);
     }
 
-    function renderButton(buttonData: FormButtonType, index: number): Node {
+    function renderButton(buttonData: FormButtonType, index: number): React$Node {
         const {isPrimary, onClick, title: buttonContent, type, accessKey, additional} = buttonData;
 
         return (
@@ -177,7 +179,7 @@ export function Form(props: PropsType): Node {
         );
     }
 
-    function renderButtonList(buttonDataList: Array<FormButtonType>): Node {
+    function renderButtonList(buttonDataList: Array<FormButtonType>): React$Node {
         return <footer>{buttonDataList.map(renderButton)}</footer>;
     }
 

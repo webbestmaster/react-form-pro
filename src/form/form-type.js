@@ -1,7 +1,5 @@
 // @flow
 
-import type {Node} from 'react';
-
 export type FormPrimitiveInputValueType = string | number | boolean | null | File;
 
 export type FormInputValueType = FormPrimitiveInputValueType | Array<FormPrimitiveInputValueType>;
@@ -25,8 +23,9 @@ export type InputComponentPropsType = {|
     +onBlur: InputComponentOnChangeType,
     +errorList: Array<Error>,
     +defaultValue: FormInputValueType,
-    +placeholder: Node,
-    +label: Node,
+    +placeholder: React$Node,
+    +label: React$Node,
+    +isRequired?: boolean,
 
     // use as attribute "accept"
     +accept?: string,
@@ -45,8 +44,9 @@ export type FieldDataType = {|
     +inputComponent: React$ComponentType<InputComponentPropsType>,
     +validate: FormValidateType,
     +defaultValue: FormInputValueType,
-    +placeholder: Node,
-    +label: Node,
+    +placeholder: React$Node,
+    +label: React$Node,
+    +isRequired?: boolean,
 
     // use as attribute "accept"
     +accept?: string,
@@ -66,8 +66,8 @@ export type ShapeFieldDataType = {|
     +inputComponent?: React$ComponentType<InputComponentPropsType>,
     +validate?: FormValidateType,
     +defaultValue?: FormInputValueType,
-    +placeholder?: Node,
-    +label?: Node,
+    +placeholder?: React$Node,
+    +label?: React$Node,
 
     // use as attribute "accept"
     +accept?: string,
@@ -83,14 +83,14 @@ export type ShapeFieldDataType = {|
 */
 
 export type FormFieldSetType = {|
-    +legend?: Node,
+    +legend?: React$Node,
     +inputList: Array<FieldDataType>,
 |};
 
 export type FormButtonTypeNameType = 'button' | 'submit' | 'reset';
 
 export type FormButtonType = {|
-    +title: Node,
+    +title: React$Node,
     +type: FormButtonTypeNameType,
     +isPrimary?: boolean,
     +onClick?: () => void,
@@ -101,7 +101,7 @@ export type FormButtonType = {|
 |};
 
 export type ButtonComponentPropsType = {|
-    +title: Node,
+    +title: React$Node,
     +type: FormButtonTypeNameType,
     +isPrimary?: boolean,
     +onClick?: () => void,
@@ -112,7 +112,7 @@ export type ButtonComponentPropsType = {|
 |};
 
 export type FormPropsType = {|
-    +title: Node,
+    +title: React$Node,
     +fieldSetList: Array<FormFieldSetType>,
     +onSubmit: (formData: FormDataType) => void,
     +onError: (errorList: Array<Error>, formData: FormDataType) => void,

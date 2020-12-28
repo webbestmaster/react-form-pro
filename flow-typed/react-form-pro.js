@@ -30,6 +30,7 @@ declare module 'react-form-pro' {
         +defaultValue: FormInputValueType,
         +placeholder: React$Node,
         +label: React$Node,
+        +isRequired?: boolean,
 
         // use as attribute "accept"
         +accept?: string,
@@ -50,6 +51,7 @@ declare module 'react-form-pro' {
         +defaultValue: FormInputValueType,
         +placeholder: React$Node,
         +label: React$Node,
+        +isRequired?: boolean,
 
         // use as attribute "accept"
         +accept?: string,

@@ -11,7 +11,7 @@ import {cleanText} from '../../../lib/string';
 type PropsType = InputComponentPropsType;
 
 export function InputText(props: PropsType): React$Node {
-    const {name, onChange, onBlur, errorList, defaultValue, placeholder, label} = props;
+    const {name, onChange, onBlur, errorList, defaultValue, placeholder, label, isRequired} = props;
 
     function handleOnChange(evt: SyntheticEvent<HTMLInputElement>) {
         const {currentTarget} = evt;

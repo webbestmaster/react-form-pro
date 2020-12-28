@@ -34,6 +34,7 @@ const fieldSetList: Array<FormFieldSetType> = [
                 placeholder: 'Your nick name...',
                 label: 'Login2',
                 isHidden: false,
+                isRequired: true,
             },
 
             /*
@@ -55,6 +56,7 @@ const fieldSetList: Array<FormFieldSetType> = [
                 placeholder: null,
                 label: 'use checkbox',
                 isHidden: false,
+                isRequired: true,
             },
         ],
 

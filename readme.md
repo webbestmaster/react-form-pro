@@ -31,10 +31,10 @@ Use `./@types/index.d.ts`.
 
 ```javascript
 // @flow
-import React, {type Node} from 'react';
+import React from 'react';
 import {Form} from 'react-form-pro';
 
-export function App(): Node {
+export function App(): React$Node {
     return (
         <Form/>
     );

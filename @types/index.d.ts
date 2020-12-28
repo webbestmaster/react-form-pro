@@ -31,6 +31,7 @@ declare module 'react-form-pro' {
         defaultValue: FormInputValueType,
         placeholder: JSX.Element | Array<JSX.Element>,
         label: JSX.Element | Array<JSX.Element>,
+        isRequired?: boolean,
 
         // use as attribute "accept"
         accept?: string,
@@ -51,6 +52,7 @@ declare module 'react-form-pro' {
         defaultValue: FormInputValueType,
         placeholder: JSX.Element | Array<JSX.Element>,
         label: JSX.Element | Array<JSX.Element>,
+        isRequired?: boolean,
 
         // use as attribute "accept"
         accept?: string,
