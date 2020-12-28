@@ -18,7 +18,7 @@ declare module 'react-form-pro' {
     ) => Array<Error>;
 
     declare export type InputComponentOptionType = {|
-        +title: string | number,
+        +title: React$Node,
         +value: string | number,
     |};
 

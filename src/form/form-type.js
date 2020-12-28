@@ -13,7 +13,7 @@ export type InputComponentOnChangeType = (value: FormInputValueType) => void;
 export type FormValidateType = (name: string, value: FormInputValueType, formData: FormDataType) => Array<Error>;
 
 export type InputComponentOptionType = {|
-    +title: string | number,
+    +title: React$Node,
     +value: string | number,
 |};
 

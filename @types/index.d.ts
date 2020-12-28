@@ -1,6 +1,3 @@
-// WARNING: index.d.ts is not tested
-// TODO: test index.d.ts in typescript project
-
 declare module 'react-form-pro' {
     export type FormPrimitiveInputValueType = string | number | boolean | null | File;
 
@@ -19,8 +16,8 @@ declare module 'react-form-pro' {
     ) => Array<Error>;
 
     export interface InputComponentOptionType {
-        title: string | number,
-        value: string | number,
+        title: JSX.Element | string,
+        value: string,
     }
 
     export interface InputComponentPropsType {
@@ -29,8 +26,8 @@ declare module 'react-form-pro' {
         onBlur: InputComponentOnChangeType,
         errorList: Array<Error>,
         defaultValue: FormInputValueType,
-        placeholder: JSX.Element | Array<JSX.Element>,
-        label: JSX.Element | Array<JSX.Element>,
+        placeholder: JSX.Element | Array<JSX.Element> | string,
+        label: JSX.Element | Array<JSX.Element> | string,
         isRequired?: boolean,
 
         // use as attribute "accept"
@@ -50,8 +47,8 @@ declare module 'react-form-pro' {
         inputComponent: React.FC<InputComponentPropsType>,
         validate: FormValidateType,
         defaultValue: FormInputValueType,
-        placeholder: JSX.Element | Array<JSX.Element>,
-        label: JSX.Element | Array<JSX.Element>,
+        placeholder: JSX.Element | Array<JSX.Element> | string,
+        label: JSX.Element | Array<JSX.Element> | string,
         isRequired?: boolean,
 
         // use as attribute "accept"
@@ -89,14 +86,14 @@ declare module 'react-form-pro' {
 */
 
     export interface FormFieldSetType {
-        legend?: JSX.Element | Array<JSX.Element>,
+        legend?: JSX.Element | Array<JSX.Element> | string,
         inputList: Array<FieldDataType>,
     }
 
     export type FormButtonTypeNameType = 'button' | 'submit' | 'reset';
 
     export interface FormButtonType {
-        title: JSX.Element | Array<JSX.Element>,
+        title: JSX.Element | Array<JSX.Element> | string,
         type: FormButtonTypeNameType,
         isPrimary?: boolean,
         onClick?: () => void,
@@ -107,7 +104,7 @@ declare module 'react-form-pro' {
     }
 
     export interface ButtonComponentPropsType {
-        title: JSX.Element | Array<JSX.Element>,
+        title: JSX.Element | Array<JSX.Element> | string,
         type: FormButtonTypeNameType,
         isPrimary?: boolean,
         onClick?: () => void,
@@ -118,7 +115,7 @@ declare module 'react-form-pro' {
     }
 
     export interface FormPropsType {
-        title: JSX.Element | Array<JSX.Element>,
+        title: JSX.Element | Array<JSX.Element> | string,
         fieldSetList: Array<FormFieldSetType>,
         onSubmit: (formData: FormDataType) => void,
         onError: (errorList: Array<Error>, formData: FormDataType) => void,
