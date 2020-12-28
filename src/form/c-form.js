@@ -187,7 +187,7 @@ export function Form(props: PropsType): React$Node {
 
     return (
         <form action="#" className={formClassName} method="post" onSubmit={handleFormSubmit}>
-            <h3>{title}</h3>
+            <div>{title}</div>
             {renderFieldSetList(fieldSetList)}
             {renderButtonList(buttonList)}
         </form>
