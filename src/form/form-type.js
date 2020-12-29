@@ -107,6 +107,7 @@ export type FormButtonType = {|
     +accessKey?: string,
     +isWide?: boolean,
     +icon?: InputIconType,
+    +hasAutoFocus?: boolean,
 
     // for custom data
     additional?: mixed,
@@ -120,6 +121,7 @@ export type ButtonComponentPropsType = {|
     +accessKey?: string,
     +isWide?: boolean,
     +icon?: InputIconType,
+    +hasAutoFocus?: boolean,
 
     // for custom data
     +additional?: mixed,

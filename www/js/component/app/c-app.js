@@ -98,6 +98,7 @@ const buttonList: Array<FormButtonType> = [
         icon: {
             src: '',
         },
+        hasAutoFocus: true,
     },
 ];
 

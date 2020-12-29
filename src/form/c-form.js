@@ -170,12 +170,23 @@ export function Form(props: PropsType): React$Node {
     }
 
     function renderButton(buttonData: FormButtonType, index: number): React$Node {
-        const {isPrimary, onClick, title: buttonContent, type, accessKey, isWide, additional, icon} = buttonData;
+        const {
+            isPrimary,
+            onClick,
+            title: buttonContent,
+            type,
+            accessKey,
+            isWide,
+            additional,
+            icon,
+            hasAutoFocus,
+        } = buttonData;
 
         return (
             <ButtonComponent
                 accessKey={accessKey}
                 additional={additional}
+                hasAutoFocus={hasAutoFocus}
                 icon={icon}
                 isPrimary={isPrimary}
                 isWide={isWide}

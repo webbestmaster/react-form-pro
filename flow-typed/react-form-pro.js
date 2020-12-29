@@ -112,6 +112,7 @@ declare module 'react-form-pro' {
         +accessKey?: string,
         +isWide?: boolean,
         +icon?: InputIconType,
+        +hasAutoFocus?: boolean,
 
         // for custom data
         +additional?: mixed,
@@ -125,6 +126,7 @@ declare module 'react-form-pro' {
         +accessKey?: string,
         +isWide?: boolean,
         +icon?: InputIconType,
+        +hasAutoFocus?: boolean,
 
         // for custom data
         +additional?: mixed,
