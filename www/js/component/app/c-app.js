@@ -35,6 +35,9 @@ const fieldSetList: Array<FormFieldSetType> = [
                 label: 'Login2',
                 isHidden: false,
                 isRequired: true,
+                icon: {
+                    src: '',
+                },
             },
 
             /*
@@ -57,6 +60,9 @@ const fieldSetList: Array<FormFieldSetType> = [
                 label: 'use checkbox',
                 isHidden: false,
                 isRequired: true,
+                icon: {
+                    src: '',
+                },
             },
         ],
 
@@ -87,6 +93,9 @@ const buttonList: Array<FormButtonType> = [
         title: 'apply form',
         type: formButtonTypeName.submit,
         isWide: false,
+        icon: {
+            src: '',
+        },
     },
 ];
 

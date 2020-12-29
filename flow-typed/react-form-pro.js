@@ -22,6 +22,10 @@ declare module 'react-form-pro' {
         +value: string | number,
     |};
 
+    declare export type InputIconType = {|
+        +src?: string,
+    |};
+
     declare export type InputComponentPropsType = {|
         +name: string,
         +onChange: InputComponentOnChangeType,
@@ -32,6 +36,7 @@ declare module 'react-form-pro' {
         +label: React$Node,
         +isRequired?: boolean,
         +isWide?: boolean,
+        +icon?: InputIconType,
 
         // use as attribute "accept"
         +accept?: string,
@@ -54,6 +59,7 @@ declare module 'react-form-pro' {
         +label: React$Node,
         +isRequired?: boolean,
         +isWide?: boolean,
+        +icon?: InputIconType,
 
         // use as attribute "accept"
         +accept?: string,
@@ -103,6 +109,7 @@ declare module 'react-form-pro' {
         +onClick?: () => void,
         +accessKey?: string,
         +isWide?: boolean,
+        +icon?: InputIconType,
 
         // for custom data
         +additional?: mixed,
@@ -115,6 +122,7 @@ declare module 'react-form-pro' {
         +onClick?: () => void,
         +accessKey?: string,
         +isWide?: boolean,
+        +icon?: InputIconType,
 
         // for custom data
         +additional?: mixed,
