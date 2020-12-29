@@ -18,7 +18,7 @@ export type InputComponentOptionType = {|
 |};
 
 type InputIconType = {|
-    +src: string,
+    +src?: string,
 |};
 
 export type InputComponentPropsType = {|
@@ -31,7 +31,8 @@ export type InputComponentPropsType = {|
     +label: React$Node,
     +isRequired?: boolean,
     +isWide?: boolean,
-    +icon: InputIconType,
+    +icon?: InputIconType,
+    +hasAutoFocus?: boolean,
 
     // use as attribute "accept"
     +accept?: string,
@@ -54,7 +55,8 @@ export type FieldDataType = {|
     +label: React$Node,
     +isRequired?: boolean,
     +isWide?: boolean,
-    +icon: InputIconType,
+    +icon?: InputIconType,
+    +hasAutoFocus?: boolean,
 
     // use as attribute "accept"
     +accept?: string,
@@ -104,7 +106,7 @@ export type FormButtonType = {|
     +onClick?: () => void,
     +accessKey?: string,
     +isWide?: boolean,
-    +icon: InputIconType,
+    +icon?: InputIconType,
 
     // for custom data
     additional?: mixed,
@@ -117,7 +119,7 @@ export type ButtonComponentPropsType = {|
     +onClick?: () => void,
     +accessKey?: string,
     +isWide?: boolean,
-    +icon: InputIconType,
+    +icon?: InputIconType,
 
     // for custom data
     +additional?: mixed,

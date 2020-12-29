@@ -82,6 +82,7 @@ export function Form(props: PropsType): React$Node {
             isRequired,
             isWide,
             icon,
+            hasAutoFocus,
         } = fieldData;
 
         const onChangeFieldHandler = createOnChangeFieldHandler(fieldData);
@@ -94,6 +95,7 @@ export function Form(props: PropsType): React$Node {
                 additional={additional}
                 defaultValue={defaultValue}
                 errorList={errorList}
+                hasAutoFocus={hasAutoFocus}
                 icon={icon}
                 isHidden={isHidden}
                 isRequired={isRequired}

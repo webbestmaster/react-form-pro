@@ -11,7 +11,7 @@ import {cleanText} from '../../../lib/string';
 type PropsType = InputComponentPropsType;
 
 export function InputText(props: PropsType): React$Node {
-    const {name, onChange, onBlur, errorList, defaultValue, placeholder, label, isRequired, icon} = props;
+    const {name, onChange, onBlur, errorList, defaultValue, placeholder, label, isRequired, icon, hasAutoFocus} = props;
 
     function handleOnChange(evt: SyntheticEvent<HTMLInputElement>) {
         const {currentTarget} = evt;
@@ -43,6 +43,7 @@ export function InputText(props: PropsType): React$Node {
         <label className={fieldStyle.form__label_wrapper}>
             <span className={fieldStyle.form__label_description}>{label}</span>
             <input
+                autoFocus={hasAutoFocus === true}
                 className={classNames(fieldStyle.form__input, {
                     [fieldStyle.form__input__invalid]: errorList.length > 0,
                 })}

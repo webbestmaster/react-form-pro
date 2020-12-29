@@ -35,6 +35,7 @@ declare module 'react-form-pro' {
         isRequired?: boolean,
         isWide?: boolean,
         icon?: InputIconType,
+        hasAutoFocus?: boolean,
 
         // use as attribute "accept"
         accept?: string,
@@ -58,6 +59,7 @@ declare module 'react-form-pro' {
         isRequired?: boolean,
         isWide?: boolean,
         icon?: InputIconType,
+        hasAutoFocus?: boolean,
 
         // use as attribute "accept"
         accept?: string,
