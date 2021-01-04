@@ -38,11 +38,13 @@ export function InputCheckbox(props: PropsType): React$Node {
                 onChange={handleOnBlur}
                 type="checkbox"
             />
+
             <span
                 className={classNames(inputCheckboxStyle.input_checkbox__input_state, {
                     [inputCheckboxStyle.input_checkbox__input_state__invalid]: isInvalid,
                 })}
             />
+
             <span
                 className={classNames(
                     fieldStyle.form__label_description,
@@ -54,6 +56,7 @@ export function InputCheckbox(props: PropsType): React$Node {
             >
                 {label}
             </span>
+
             {/* <code>errorList: {errorList.map((error: Error): string => error.message)}</code>*/}
         </label>
     );

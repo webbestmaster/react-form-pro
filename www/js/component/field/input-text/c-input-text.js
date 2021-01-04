@@ -42,6 +42,7 @@ export function InputText(props: PropsType): React$Node {
     return (
         <label className={fieldStyle.form__label_wrapper}>
             <span className={fieldStyle.form__label_description}>{label}</span>
+
             <input
                 autoFocus={hasAutoFocus === true}
                 className={classNames(fieldStyle.form__input, {
@@ -54,6 +55,7 @@ export function InputText(props: PropsType): React$Node {
                 placeholder={placeholder}
                 type="text"
             />
+
             {/* <code>errorList: {errorList.map((error: Error): string => error.message)}</code>*/}
         </label>
     );

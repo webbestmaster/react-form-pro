@@ -83,6 +83,7 @@ export function Form(props: PropsType): React$Node {
             isWide,
             icon,
             hasAutoFocus,
+            className: inputClassName,
         } = fieldData;
 
         const onChangeFieldHandler = createOnChangeFieldHandler(fieldData);
@@ -93,6 +94,7 @@ export function Form(props: PropsType): React$Node {
             <InputComponent
                 accept={accept}
                 additional={additional}
+                className={inputClassName}
                 defaultValue={defaultValue}
                 errorList={errorList}
                 hasAutoFocus={hasAutoFocus}
@@ -180,12 +182,14 @@ export function Form(props: PropsType): React$Node {
             additional,
             icon,
             hasAutoFocus,
+            className: buttonClassName,
         } = buttonData;
 
         return (
             <ButtonComponent
                 accessKey={accessKey}
                 additional={additional}
+                className={buttonClassName}
                 hasAutoFocus={hasAutoFocus}
                 icon={icon}
                 isPrimary={isPrimary}
@@ -207,7 +211,9 @@ export function Form(props: PropsType): React$Node {
     return (
         <form action="#" className={formClassName} method="post" onSubmit={handleFormSubmit}>
             {title}
+
             {renderFieldSetList(fieldSetList)}
+
             {renderButtonList(buttonList)}
         </form>
     );

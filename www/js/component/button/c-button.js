@@ -11,6 +11,8 @@ type PropsType = ButtonComponentPropsType;
 export function Button(props: PropsType): React$Node {
     const {accessKey, onClick, additional, isPrimary, title, type, icon, hasAutoFocus} = props;
 
+    console.log('button', props);
+
     return (
         // eslint-disable-next-line react/button-has-type
         <button

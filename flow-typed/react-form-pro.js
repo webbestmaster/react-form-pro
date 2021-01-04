@@ -38,6 +38,7 @@ declare module 'react-form-pro' {
         +isWide?: boolean,
         +icon?: InputIconType,
         +hasAutoFocus?: boolean,
+        +className?: string,
 
         // use as attribute "accept"
         +accept?: string,
@@ -62,6 +63,7 @@ declare module 'react-form-pro' {
         +isWide?: boolean,
         +icon?: InputIconType,
         +hasAutoFocus?: boolean,
+        +className?: string,
 
         // use as attribute "accept"
         +accept?: string,
@@ -113,6 +115,7 @@ declare module 'react-form-pro' {
         +isWide?: boolean,
         +icon?: InputIconType,
         +hasAutoFocus?: boolean,
+        +className?: string,
 
         // for custom data
         +additional?: mixed,
@@ -127,6 +130,7 @@ declare module 'react-form-pro' {
         +isWide?: boolean,
         +icon?: InputIconType,
         +hasAutoFocus?: boolean,
+        +className?: string,
 
         // for custom data
         +additional?: mixed,

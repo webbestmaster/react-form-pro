@@ -33,6 +33,7 @@ export type InputComponentPropsType = {|
     +isWide?: boolean,
     +icon?: InputIconType,
     +hasAutoFocus?: boolean,
+    +className?: string,
 
     // use as attribute "accept"
     +accept?: string,
@@ -57,6 +58,7 @@ export type FieldDataType = {|
     +isWide?: boolean,
     +icon?: InputIconType,
     +hasAutoFocus?: boolean,
+    +className?: string,
 
     // use as attribute "accept"
     +accept?: string,
@@ -108,6 +110,7 @@ export type FormButtonType = {|
     +isWide?: boolean,
     +icon?: InputIconType,
     +hasAutoFocus?: boolean,
+    +className?: string,
 
     // for custom data
     additional?: mixed,
@@ -122,6 +125,7 @@ export type ButtonComponentPropsType = {|
     +isWide?: boolean,
     +icon?: InputIconType,
     +hasAutoFocus?: boolean,
+    +className?: string,
 
     // for custom data
     +additional?: mixed,

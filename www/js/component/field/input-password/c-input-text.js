@@ -34,6 +34,7 @@ export function InputPassword(props: PropsType): React$Node {
     return (
         <label className={fieldStyle.form__label_wrapper}>
             <span className={fieldStyle.form__label_description}>{label}</span>
+
             <input
                 className={classNames(fieldStyle.form__input, {
                     [fieldStyle.form__input__invalid]: errorList.length > 0,
@@ -45,6 +46,7 @@ export function InputPassword(props: PropsType): React$Node {
                 placeholder={placeholder}
                 type="password"
             />
+
             {/* <code>errorList: {errorList.map((error: Error): string => error.message)}</code>*/}
         </label>
     );

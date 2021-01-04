@@ -38,6 +38,7 @@ const fieldSetList: Array<FormFieldSetType> = [
                 icon: {
                     src: '',
                 },
+                className: 'my-class-name',
                 // hasAutoFocus: false,
             },
 
@@ -65,6 +66,7 @@ const fieldSetList: Array<FormFieldSetType> = [
                     src: '',
                 },
                 hasAutoFocus: false,
+                className: 'my-class-name-1',
             },
         ],
 
@@ -99,6 +101,7 @@ const buttonList: Array<FormButtonType> = [
             src: '',
         },
         hasAutoFocus: true,
+        className: 'my-class-name',
     },
 ];
 
